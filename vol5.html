@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맹수석의 미래교육 리포트 #5: AI와 사람</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f0f4f8; /* Cool tech background */
+            color: #1e293b;
+        }
+        
+        .serif-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tech-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .human-touch {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #64748b; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Chosen Palette: [Digital Humanism] - Deep Slate/Navy (Technology/Future), Warm Orange/Amber (Humanity/Safety Net), Clean White (Clarity).
+         Reflects the theme of "Technology for People". -->
+
+    <!-- Application Structure Plan:
+         1. Hero: Tech-oriented but warm visual. Title focusing on "Human Safety Net in AI Era".
+         2. The Problem (Digital Divide): Visualizing the gap/fear parents have.
+         3. The Solution (Policy): Interactive cards for "AI Auxiliary Learning", "Data Sovereignty", "Daejeon Governance".
+         4. Impact Chart: Radar chart showing the balance between Tech Adoption and Human Care before/after policy.
+         5. Vision Statement: Emphasizing "Human-Centric Education". -->
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 py-4 shadow-sm">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <div class="font-bold text-slate-800 text-lg"><i class="fas fa-robot mr-2 text-blue-600"></i>미래교육 리포트</div>
+            <div class="text-sm text-slate-500 font-medium">Vol. 5: AI와 사람</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative tech-gradient text-white pt-24 pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/circuit.png')] opacity-10"></div>
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-in">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-900/50 border border-blue-500 text-blue-200 text-xs font-bold mb-6 tracking-widest">제5화: 정책 리포트</span>
+            <h1 class="text-3xl md:text-5xl font-bold mb-8 leading-tight serif-font">
+                AI 시대, 기술보다 중요한 것은<br><span class="text-amber-400">'사람'</span>을 향한 안전망입니다
+            </h1>
+            <p class="text-xl text-slate-300 mb-4 font-light">"디지털 격차가 교육의 격차가 되지 않도록,<br>따뜻한 기술로 아이들을 지키겠습니다."</p>
+            <div class="mt-12 flex justify-center">
+                <div class="animate-pulse p-2 rounded-full border border-slate-600 text-slate-400">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 -mt-10 relative z-20 pb-20 space-y-24">
+
+        <!-- 1. The Concern: Digital Divide -->
+        <section class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-slate-200 fade-in">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4 serif-font"><i class="fas fa-question-circle text-red-500 mr-2"></i>학부모님의 걱정</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        "AI가 모든 것을 대신하는 시대라는데, 우리 아이는 이 빠른 변화 속에서 길을 잃지 않을까요?"
+                    </p>
+                    <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-red-400">
+                        <p class="text-sm text-slate-600">
+                            <strong>디지털 격차(Digital Divide)</strong>는 단순한 기기의 유무가 아닙니다.<br>
+                            정보를 활용하는 능력의 차이가 <strong>교육의 불평등</strong>으로 이어지는 것을 막아야 합니다.
+                        </p>
+                    </div>
+                </div>
+                <!-- Illustration/Icon Area -->
+                <div class="md:w-1/2 w-full flex justify-center items-center">
+                    <div class="relative w-48 h-48">
+                        <div class="absolute inset-0 bg-blue-100 rounded-full opacity-50 animate-ping"></div>
+                        <div class="relative z-10 bg-white rounded-full w-full h-full flex items-center justify-center border-4 border-blue-500 shadow-lg">
+                            <i class="fas fa-laptop-code text-6xl text-blue-600"></i>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-amber-500 text-white p-3 rounded-full shadow-lg">
+                            <i class="fas fa-exclamation-triangle text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Solution: Policy Cards -->
+        <section class="fade-in">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-800 serif-font">🛠️ 맹수석의 디지털 솔루션</h2>
+                <p class="text-slate-500 mt-2">따뜻한 기술로 만드는 교육 안전망</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Policy 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-100 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-4 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i class="fas fa-chalkboard-teacher text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">AI 보조학습</h3>
+                    <p class="text-slate-600 text-sm">
+                        선생님의 손길이 닿지 못하는 사각지대까지.<br>
+                        학습 부진을 겪는 아이들에게 <strong>맞춤형 튜터링</strong>을 제공합니다.
+                    </p>
+                </div>
+
+                <!-- Policy 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-100 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-600 group-hover:text-white transition">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">데이터 주권</h3>
+                    <p class="text-slate-600 text-sm">
+                        기술은 아이들의 도구여야 합니다.<br>
+                        상업적 이용을 막는 <strong>안전한 교육용 데이터 가이드라인</strong>을 수립합니다.
+                    </p>
+                </div>
+
+                <!-- Policy 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-100 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 mb-4 group-hover:bg-purple-600 group-hover:text-white transition">
+                        <i class="fas fa-project-diagram text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">대덕특구 협력</h3>
+                    <p class="text-slate-600 text-sm">
+                        과학 도시 대전만의 인프라 활용.<br>
+                        연구실의 첨단 기술이 교실의 <strong>생생한 체험</strong>이 됩니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Before & After Analysis (Radar Chart) -->
+        <section class="bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-200 fade-in">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-slate-800 mb-2 serif-font">📊 정책 기대 효과 분석</h2>
+                <p class="text-slate-500 text-sm">맹수석의 정책이 가져올 교육 현장의 변화</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div class="w-full md:w-2/3 bg-white p-6 rounded-2xl shadow-sm">
+                    <div class="chart-container">
+                        <canvas id="impactChart"></canvas>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 space-y-4">
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-slate-400 shadow-sm">
+                        <h4 class="font-bold text-slate-700 text-sm mb-1">현재 (Current)</h4>
+                        <p class="text-xs text-slate-500">높은 기술 불안감, 낮은 활용도, 격차 심화</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-amber-500 shadow-sm">
+                        <h4 class="font-bold text-amber-600 text-sm mb-1">미래 (Future)</h4>
+                        <p class="text-xs text-slate-500">높은 안전성, 맞춤형 학습, 인간 중심 기술</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Vision Statement -->
+        <section class="text-center py-10 fade-in">
+            <div class="max-w-3xl mx-auto bg-gradient-to-r from-slate-800 to-slate-900 text-white p-10 rounded-2xl shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10 text-9xl"><i class="fas fa-heart"></i></div>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 leading-relaxed serif-font">
+                    "기술은 차갑지만,<br>교육은 뜨거워야 합니다"
+                </h2>
+                <p class="text-lg text-slate-300 leading-relaxed">
+                    AI는 지식을 가르칠 수 있지만,<br>
+                    아이의 눈물을 닦아주고 꿈을 응원하는 것은<br>
+                    오직 <strong>선생님</strong>과 <strong>우리 공동체</strong>만이 할 수 있습니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-8 pb-12 text-center mt-12">
+            <div class="flex flex-wrap justify-center gap-3 mb-6">
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs border border-slate-200">#대전교육</span>
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs border border-slate-200">#AI교육</span>
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs border border-slate-200">#디지털격차해소</span>
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs border border-slate-200">#인간중심</span>
+            </div>
+            <button onclick="alert('다음 에피소드 [정책 리포트 #6: 4세 고시 광풍 비판]으로 이어집니다.')" class="text-slate-500 hover:text-blue-600 transition flex items-center justify-center mx-auto text-sm font-medium">
+                다음 이야기: 4세 고시 비판 <i class="fas fa-chevron-right ml-2"></i>
+            </button>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- Interactions ---
+
+        // 1. Chart.js Implementation - Radar Chart for Policy Impact
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('impactChart').getContext('2d');
+            
+            const data = {
+                labels: [
+                    '기술 활용도 (Tech Usage)', 
+                    '데이터 안전 (Safety)', 
+                    '학습 맞춤화 (Personalization)', 
+                    '교육 격차 해소 (Equality)', 
+                    '인간적 교감 (Human Touch)'
+                ],
+                datasets: [{
+                    label: '현재 (Current)',
+                    data: [60, 40, 30, 40, 50],
+                    fill: true,
+                    backgroundColor: 'rgba(148, 163, 184, 0.2)', // Slate-400 transparent
+                    borderColor: 'rgb(148, 163, 184)',
+                    pointBackgroundColor: 'rgb(148, 163, 184)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(148, 163, 184)'
+                }, {
+                    label: '정책 도입 후 (Future)',
+                    data: [90, 95, 90, 85, 95], // Optimistic projection based on policy goals
+                    fill: true,
+                    backgroundColor: 'rgba(245, 158, 11, 0.2)', // Amber-500 transparent
+                    borderColor: 'rgb(245, 158, 11)',
+                    pointBackgroundColor: 'rgb(245, 158, 11)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(245, 158, 11)'
+                }]
+            };
+
+            const config = {
+                type: 'radar',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    elements: {
+                        line: { borderWidth: 3 }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: { display: true, color: '#e2e8f0' },
+                            grid: { color: '#e2e8f0' },
+                            pointLabels: {
+                                font: { family: "'Noto Sans KR', sans-serif", size: 12, weight: '600' },
+                                color: '#475569'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: { display: false, stepSize: 20 }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            titleFont: { family: "'Noto Sans KR', sans-serif" },
+                            bodyFont: { family: "'Noto Sans KR', sans-serif" },
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.raw + '점';
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            new Chart(ctx, config);
+        });
+    </script>
+
+    <!-- Visualization & Content Choices:
+         1. Hero Section -> Tech + Human theme -> Circuit pattern background with warm text.
+         2. Cards Section -> Solutions -> Highlights specific policy proposals (AI Tutor, Data Safety, etc.).
+         3. Radar Chart -> Impact Analysis -> Compares current state vs. future goals across key metrics (Safety, Equality, etc.).
+         4. Vision Box -> Emotional Anchor -> Reaffirms the core message "Technology for People".
+         CONFIRMATION: NO SVG graphics used (FontAwesome used). NO Mermaid JS used. -->
+</body>
+</html>
