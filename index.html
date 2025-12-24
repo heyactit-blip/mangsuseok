@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맹수석의 대전 교육 비전 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Nanum+Myeongjo:wght@700;800&display=swap');
+        
+        :root {
+            --primary-blue: #2563eb;
+            --accent-orange: #f59e0b;
+            --bg-light: #fdfdfd;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--bg-light);
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .serif-font { font-family: 'Nanum Myeongjo', serif; }
+
+        /* 밝고 희망찬 헤더 디자인 */
+        .campaign-header {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .campaign-header::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--bg-light);
+            transform: skewY(-2deg);
+        }
+
+        /* 밝은 분위기의 입체적 도서 오브제 */
+        .book-object {
+            background: linear-gradient(to right, #ffffff 0%, #f0f9ff 100%);
+            border-radius: 4px 12px 12px 4px;
+            box-shadow: 15px 15px 30px rgba(0,0,0,0.1), inset 5px 0 10px rgba(255,255,255,0.8);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.4s ease;
+        }
+        .book-object:hover {
+            transform: rotateY(-10deg) scale(1.05);
+        }
+
+        /* 정책 카드 - 밝고 경쾌하게 */
+        .policy-card {
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .policy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-blue);
+        }
+
+        .number-tag {
+            font-size: 0.75rem;
+            font-weight: 900;
+            color: var(--primary-blue);
+            background: #eff6ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade { animation: fadeIn 0.5s ease forwards; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 헤더 섹션: 비전 2026 강조 -->
+    <header class="campaign-header text-white pt-24 pb-32 px-6">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <div class="inline-block bg-white/20 backdrop-blur-md px-4 py-1 rounded-full mb-6 text-sm font-bold tracking-widest animate-pulse">
+                DAEJEON EDUCATION VISION 2026
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black mb-6 serif-font leading-tight drop-shadow-lg">
+                더 밝은 대전 교육,<br><span class="text-amber-300">함께 만드는 미래</span>
+            </h1>
+            <p class="text-blue-100 text-lg md:text-2xl max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                대전의 아이들이 행복하고 선생님이 존경받는 세상,<br>
+                맹수석이 그리는 20가지 혁신 로드맵입니다.
+            </p>
+        </div>
+    </header>
+
+    <!-- 밝은 분위기의 도서 소개 섹션 -->
+    <section class="max-w-6xl mx-auto -mt-20 px-6 relative z-20">
+        <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 border border-slate-100">
+            <div class="flex-shrink-0 relative">
+                <!-- 밝은 색상의 도서 그래픽 -->
+                <div class="book-object w-48 h-64 p-6 flex flex-col items-center justify-between text-slate-800 border-l-[10px] border-blue-500">
+                    <div class="text-center">
+                        <i class="fas fa-sun text-amber-400 text-xl mb-2"></i>
+                        <h4 class="serif-font font-extrabold text-sm leading-tight">미래교육,<br>현장에서<br>길을 찾다</h4>
+                    </div>
+                    <div class="text-[9px] font-bold text-blue-600 tracking-tighter">MAENG SU SEOK</div>
+                </div>
+                <!-- 장식용 원형 요소 -->
+                <div class="absolute -top-4 -right-4 w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-lg rotate-12">BEST</div>
+            </div>
+            <div class="flex-grow">
+                <h2 class="text-3xl font-black text-slate-900 mb-4 serif-font">정책의 근거는 확실하게, 분위기는 따뜻하게</h2>
+                <p class="text-slate-500 text-lg leading-relaxed mb-6">
+                    저서 <strong>『미래교육, 현장에서 길을 찾다』</strong>에 담긴 핵심 철학을 시민 여러분이 이해하기 쉽도록 밝고 경쾌한 리포트 형식으로 재구성했습니다. 각 카드를 클릭하여 대전 교육의 미래를 확인하십시오.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <span class="flex items-center gap-2 text-sm font-bold text-blue-600 bg-blue-50 px-4 py-2 rounded-lg">
+                        <i class="fas fa-check-circle"></i> 현장 중심 정책
+                    </span>
+                    <span class="flex items-center gap-2 text-sm font-bold text-amber-600 bg-amber-50 px-4 py-2 rounded-lg">
+                        <i class="fas fa-check-circle"></i> 2026 비전 반영
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 리포트 그리드 -->
+    <main class="max-w-7xl mx-auto px-6 py-24">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="report-grid">
+            <!-- JS로 생성됨 -->
+        </div>
+    </main>
+
+    <footer class="bg-slate-50 border-t border-slate-200 py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="serif-font text-2xl font-bold text-slate-800 mb-6">“교육이 대전의 미래입니다”</h3>
+            <p class="text-slate-400 text-sm mb-8 uppercase tracking-widest font-bold">© 2024-2026 Daejeon Education Vision Project</p>
+            <div class="flex justify-center gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-blue-600 transition-colors shadow-sm">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-pink-600 transition-colors shadow-sm">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-red-600 transition-colors shadow-sm">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 깃허브 기본 경로 설정
+        const baseUrl = "https://heyactit-blip.github.io/mangsuseok/";
+        
+        const reports = [
+            { id: 1, title: "홍성 소년의 꿈", theme: "성장 스토리", icon: "fa-seedling" },
+            { id: 2, title: "정의를 향한 발걸음", theme: "가치관 정립", icon: "fa-balance-scale" },
+            { id: 3, title: "따뜻한 법학자", theme: "사람 중심 법치", icon: "fa-heart" },
+            { id: 4, title: "연구실의 등대", theme: "진정성 있는 연구", icon: "fa-lightbulb" },
+            { id: 5, title: "AI와 사람", theme: "디지털 교육 혁신", icon: "fa-microchip" },
+            { id: 6, title: "아이들의 동심", theme: "인성 교육 강화", icon: "fa-child" },
+            { id: 7, title: "대전판 합의", theme: "협치 모델 구축", icon: "fa-comments" },
+            { id: 8, title: "온동네 돌봄", theme: "완전 돌봄 체계", icon: "fa-home" },
+            { id: 9, title: "행정 혁신", theme: "교사 업무 경감", icon: "fa-briefcase" },
+            { id: 10, title: "교육 거버넌스", theme: "지역 상생 구조", icon: "fa-users" },
+            { id: 11, title: "담장을 낮추다", theme: "개방형 학교 운영", icon: "fa-unlock-alt" },
+            { id: 12, title: "중재의 리더십", theme: "갈등 조정 전문가", icon: "fa-handshake" },
+            { id: 13, title: "현장 소통", theme: "찾아가는 교육청", icon: "fa-microphone-lines" },
+            { id: 14, title: "교육 소비자 보호", theme: "학생·학부모 권익", icon: "fa-shield-heart" },
+            { id: 15, title: "안전 설계자", theme: "안전한 등하굣길", icon: "fa-shield-halved" },
+            { id: 16, title: "따뜻한 권위", theme: "존경받는 교권", icon: "fa-graduation-cap" },
+            { id: 17, title: "영원한 등대", theme: "지속 가능한 멘토링", icon: "fa-star" },
+            { id: 18, title: "광장의 진정성", theme: "시민과 함께하는 교육", icon: "fa-landmark" },
+            { id: 19, title: "낙오자 없는 교육", theme: "기초학력 책임제", icon: "fa-person-circle-check" },
+            { id: 20, title: "새로운 길", theme: "2026 대전 교육 비전", icon: "fa-compass" }
+        ];
+
+        const grid = document.getElementById('report-grid');
+
+        reports.forEach((report, index) => {
+            const volNum = String(report.id).padStart(2, '0');
+            const card = document.createElement('a');
+            // 깃허브 절대 경로 연결
+            card.href = `${baseUrl}vol${volNum}.html`;
+            card.className = 'policy-card rounded-2xl p-8 flex flex-col group animate-fade';
+            card.style.animationDelay = `${index * 0.03}s`;
+            
+            card.innerHTML = `
+                <div class="flex justify-between items-center mb-6">
+                    <span class="number-tag uppercase">Report #${volNum}</span>
+                    <div class="text-slate-300 group-hover:text-amber-500 transition-colors">
+                        <i class="fas ${report.icon} text-2xl"></i>
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-blue-600 text-[11px] font-black tracking-widest mb-2">${report.theme}</p>
+                    <h3 class="text-xl font-bold text-slate-800 serif-font leading-tight group-hover:text-blue-700 transition-colors">
+                        ${report.title}
+                    </h3>
+                </div>
+                <div class="mt-8 pt-6 border-t border-slate-50 flex items-center justify-between">
+                    <span class="text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors italic">Read Report</span>
+                    <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:translate-x-1">
+                        <i class="fas fa-chevron-right text-[10px]"></i>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
