@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맹수석의 미래교육 리포트 #9: 행정 혁신</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8fafc; /* Clean, professional background */
+            color: #334155;
+        }
+        
+        .serif-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .blue-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b; 
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Chosen Palette: [Efficiency & Focus] - Corporate Blue (Professionalism/Trust), Clean White (Clarity/Reduction), Slate Gray (Structure).
+         Reflects the theme of administrative efficiency and returning to basics. -->
+
+    <!-- Application Structure Plan:
+         1. Hero: Professional, clean look. Title emphasizing "Administrative Innovation" for "Education Essence".
+         2. The Problem (Pie Chart): Visualizing current teacher time allocation (Admin vs Teaching).
+         3. The Solution (Interactive List): "Administrative Diet", "Digital System", "School Support Center".
+         4. The Result (Bar Chart): Before/After comparison of teacher's focus.
+         5. Promise: Commitment to "Teacher's Rights" and "Student's Learning Rights". -->
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 py-4 shadow-sm">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <div class="font-bold text-slate-800 text-lg"><i class="fas fa-chalkboard-teacher mr-2 text-blue-600"></i>미래교육 리포트</div>
+            <div class="text-sm text-slate-500 font-medium">Vol. 9: 행정 혁신</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative blue-gradient text-white pt-24 pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10"></div>
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-in">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-800/50 border border-blue-400 text-blue-100 text-xs font-bold mb-6 tracking-widest">제9화: 공교육 정상화</span>
+            <h1 class="text-3xl md:text-5xl font-bold mb-8 leading-tight serif-font">
+                "선생님은 가르치고,<br>
+                학생은 배우는 <span class="text-yellow-300 border-b-4 border-yellow-400">본질</span>에 집중하는 학교"
+            </h1>
+            <p class="text-xl text-blue-100 mb-4 font-light">"행정 업무에 지친 선생님을<br>아이들의 곁으로 돌려드리겠습니다."</p>
+            <div class="mt-12 flex justify-center">
+                <div class="animate-bounce p-2 rounded-full border border-blue-300 text-blue-200">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 -mt-10 relative z-20 pb-20 space-y-24">
+
+        <!-- 1. The Reality: Teacher's Burden -->
+        <section class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-slate-200 fade-in">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4 serif-font"><i class="fas fa-file-alt text-red-500 mr-2"></i>행정 서류에 파묻힌 교실</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        "수업 준비보다 공문 처리에 더 많은 시간을 쏟고 있어요."<br>
+                        선생님이 아이들의 눈을 바라볼 시간이 없다면, 그 피해는 고스란히 <strong>학생들</strong>에게 돌아갑니다.
+                    </p>
+                    <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-red-400">
+                        <p class="text-sm text-slate-600">
+                            <strong>과도한 행정 업무</strong>는 수업의 질을 떨어뜨리고,<br>생활 지도를 불가능하게 만드는 주원인입니다.
+                        </p>
+                    </div>
+                </div>
+                <!-- Chart Area: Current Time Allocation -->
+                <div class="md:w-1/2 w-full">
+                    <div class="bg-slate-50 p-4 rounded-xl">
+                        <h4 class="text-center text-slate-500 text-sm mb-4">현재 교사 업무 비중 (문제점)</h4>
+                        <div class="chart-container">
+                            <canvas id="burdenChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Solution: Administrative Diet -->
+        <section class="fade-in">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-800 serif-font">📉 맹수석의 '행정 다이어트'</h2>
+                <p class="text-slate-500 mt-2">불필요한 업무는 줄이고, 지원은 늘립니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Solution 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-100 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">학교지원센터 강화</h3>
+                    <p class="text-slate-600 text-sm">
+                        계약, 시설 관리 등 복잡한 행정 업무는<br>
+                        <strong>교육지원청이 전담</strong>하여 처리합니다.
+                    </p>
+                </div>
+
+                <!-- Solution 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-100 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-600 group-hover:text-white transition">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">불필요 공문 제로화</h3>
+                    <p class="text-slate-600 text-sm">
+                        관습적인 보고 중심 공문을 없애고,<br>
+                        <strong>행정 업무 총량제</strong>를 도입합니다.
+                    </p>
+                </div>
+
+                <!-- Solution 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-100 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mb-4 group-hover:bg-purple-600 group-hover:text-white transition">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">디지털 통합 행정</h3>
+                    <p class="text-slate-600 text-sm">
+                        스마트한 시스템 도입으로<br>
+                        업무 처리 속도와 효율성을 <strong>획기적으로 개선</strong>합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Rights Protection: Teacher & Student -->
+        <section class="bg-slate-800 text-white rounded-3xl p-8 md:p-12 shadow-2xl fade-in">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold mb-4 serif-font">🛡️ 교권 보호가 곧 학습권 보호입니다</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-700 p-6 rounded-xl border border-slate-600">
+                    <h3 class="text-xl font-bold text-blue-300 mb-3"><i class="fas fa-gavel mr-2"></i>교권 보호 시스템</h3>
+                    <ul class="space-y-2 text-slate-300 text-sm list-disc pl-5">
+                        <li>무분별한 민원/소송 대응 전담팀</li>
+                        <li>법률 지원 체계 구축 (변호사 확충)</li>
+                        <li>교육청 책임 하에 분쟁 조정 대행</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-700 p-6 rounded-xl border border-slate-600">
+                    <h3 class="text-xl font-bold text-yellow-300 mb-3"><i class="fas fa-graduation-cap mr-2"></i>학생 맞춤형 교육</h3>
+                    <ul class="space-y-2 text-slate-300 text-sm list-disc pl-5">
+                        <li>학급당 학생 수 단계적 감축</li>
+                        <li>기초 학력 부족 학생 1:1 튜터링</li>
+                        <li>질문이 살아있는 배움 중심 교실</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Expected Change (Chart) -->
+        <section class="bg-white rounded-2xl shadow-sm p-8 border border-slate-200 fade-in">
+            <h3 class="text-center font-bold text-slate-700 mb-6 text-xl">혁신 후 기대되는 변화</h3>
+            <div class="chart-container">
+                <canvas id="improvementChart"></canvas>
+            </div>
+            <p class="text-center text-sm text-slate-500 mt-4">행정 시간은 줄고, 교육 시간은 늘어납니다.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-8 pb-12 text-center mt-12">
+            <div class="flex flex-wrap justify-center gap-3 mb-6">
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs border border-slate-200">#대전교육</span>
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs border border-slate-200">#행정혁신</span>
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs border border-slate-200">#교권보호</span>
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs border border-slate-200">#공교육정상화</span>
+            </div>
+            <button onclick="alert('다음 에피소드 [정책 리포트 #10: 지역 사회와 함께하는 거버넌스]로 이어집니다.')" class="text-slate-500 hover:text-blue-600 transition flex items-center justify-center mx-auto text-sm font-medium">
+                다음 이야기: 거버넌스 <i class="fas fa-chevron-right ml-2"></i>
+            </button>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- Interactions ---
+
+        // 1. Chart.js Implementation - Current Burden (Pie Chart)
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctxBurden = document.getElementById('burdenChart').getContext('2d');
+            
+            const dataBurden = {
+                labels: ['행정 업무 (Admin)', '수업/연구 (Teaching)', '생활 지도 (Guidance)', '기타 (Others)'],
+                datasets: [{
+                    data: [50, 30, 15, 5], // High admin burden
+                    backgroundColor: [
+                        'rgba(239, 68, 68, 0.7)', // Red (Problem)
+                        'rgba(59, 130, 246, 0.7)', // Blue
+                        'rgba(16, 185, 129, 0.7)', // Green
+                        'rgba(148, 163, 184, 0.7)' // Slate
+                    ],
+                    borderWidth: 0
+                }]
+            };
+
+            const configBurden = {
+                type: 'pie',
+                data: dataBurden,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            };
+
+            new Chart(ctxBurden, configBurden);
+
+            // 2. Chart.js Implementation - Improvement (Bar Chart Comparison)
+            const ctxImprovement = document.getElementById('improvementChart').getContext('2d');
+
+            const dataImprovement = {
+                labels: ['행정 업무 (Admin)', '수업/연구 (Teaching)', '생활 지도 (Guidance)'],
+                datasets: [
+                    {
+                        label: '현재 (Current)',
+                        data: [50, 30, 15],
+                        backgroundColor: 'rgba(148, 163, 184, 0.5)',
+                        borderColor: 'rgba(148, 163, 184, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '혁신 후 (Future)',
+                        data: [15, 60, 25], // Goal state
+                        backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            };
+
+            const configImprovement = {
+                type: 'bar',
+                data: dataImprovement,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            title: { display: true, text: '비중 (%)' }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'top' }
+                    }
+                }
+            };
+
+            new Chart(ctxImprovement, configImprovement);
+        });
+    </script>
+
+    <!-- Visualization & Content Choices:
+         1. Hero Section -> Professional/Clean theme -> Blue gradient, emphasizing "Essence".
+         2. Pie Chart -> Problem Visualization -> Instantly shows the imbalance of teacher's time.
+         3. Solution Grid -> Icon Cards -> Clearly presents the 3 pillars of administrative reform.
+         4. Rights Section -> Dark Card -> Highlights the seriousness of Teacher Rights & Student Rights.
+         5. Bar Chart -> Outcome -> Visualizes the positive shift in focus (Admin DOWN, Teaching UP).
+         CONFIRMATION: NO SVG graphics used (FontAwesome used). NO Mermaid JS used. -->
+</body>
+</html>
