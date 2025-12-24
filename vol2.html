@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맹수석의 미래교육 리포트 #2: 정의를 향한 발걸음</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8fafc; /* Cool slate background for a more serious tone */
+            color: #1e293b;
+        }
+        
+        .serif-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            height: 350px;
+            max-height: 450px;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .pulse-slow {
+            animation: pulseSlow 3s infinite;
+        }
+
+        @keyframes pulseSlow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #64748b; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Chosen Palette: [Justice & Healing] - Deep Navy (Authority/Depth), Muted Red (Pain/Warning), Clean White (Hope/Healing), Slate Gray (Structure).
+         Reflects the serious nature of school violence and the transition to a legal career. -->
+
+    <!-- Application Structure Plan: A narrative-driven dashboard.
+         1. Intro/Hero: Dark, emotive opening setting the scene of the high school incident.
+         2. The Incident Timeline: Interactive vertical timeline showing the sequence of events (Courage -> Violence -> Hospitalization).
+         3. The Turning Point (Hospital): Visual representation of the internal questions ("Why?").
+         4. Analysis of Injustice: Bar chart comparing "Expected Protection" vs. "Actual Reality" (Systemic Failure).
+         5. The Resolution (Career Path): Flowchart-style layout showing the transformation from Victim to Legal Scholar.
+         6. Vision for Future: Policy cards connecting past pain to future safety promises. -->
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md text-white py-4 shadow-lg border-b border-slate-700">
+        <div class="max-w-5xl mx-auto px-6 flex justify-between items-center">
+            <div class="font-bold text-lg tracking-wider"><i class="fas fa-scale-balanced mr-2 text-slate-300"></i>미래교육 리포트</div>
+            <div class="text-xs text-slate-400 uppercase tracking-widest">Vol. 2: 시련과 정의</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-slate-900 text-white pt-24 pb-36 overflow-hidden">
+        <!-- Abstract Background Shapes representing confusion/darkness -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-slate-700 rounded-full blur-3xl mix-blend-multiply filter"></div>
+            <div class="absolute bottom-10 right-10 w-80 h-80 bg-slate-800 rounded-full blur-3xl mix-blend-multiply filter"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 fade-in-up">
+            <span class="inline-block py-1 px-3 rounded border border-slate-600 text-slate-300 text-xs font-semibold mb-6">제2화: 아픔과 성찰</span>
+            <h1 class="text-4xl md:text-6xl font-black mb-8 leading-tight serif-font">
+                아픈 기억,<br>
+                하지만 멈출 수 없었던<br>
+                <span class="text-blue-400">'정의'</span>를 향한 발걸음
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto mb-12 font-light">
+                가장 찬란해야 할 시절 찾아온 학교폭력의 그림자.<br>
+                그 깊은 상처는 어떻게 한 소년을 법학자의 길로 이끌었는가.
+            </p>
+            <div class="flex justify-center">
+                <button onclick="scrollToSection('timeline')" class="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition shadow-lg shadow-blue-900/50 flex items-center font-medium">
+                    그날의 이야기 <i class="fas fa-chevron-down ml-2 group-hover:translate-y-1 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 -mt-20 relative z-20 pb-24 space-y-24">
+
+        <!-- 1. The Incident Timeline -->
+        <section id="timeline" class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-slate-100 scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800 mb-3 serif-font">🌑 그날, 학교에서 생긴 일</h2>
+                <p class="text-slate-500">선의가 시련으로 돌아온 순간의 기록</p>
+            </div>
+
+            <div class="relative border-l-4 border-slate-200 ml-4 md:ml-8 space-y-12">
+                <!-- Event 1 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[14px] top-0 w-6 h-6 bg-blue-500 rounded-full border-4 border-white shadow-md group-hover:scale-110 transition"></div>
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-blue-300 transition shadow-sm">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wide mb-1 block">The Beginning</span>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">작은 용기</h3>
+                        <p class="text-slate-600">
+                            괴롭힘을 당하던 친구를 돕기 위해 나섰습니다. 불의를 보고 지나칠 수 없었던 소년의 순수한 정의감이었습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[14px] top-0 w-6 h-6 bg-red-500 rounded-full border-4 border-white shadow-md group-hover:scale-110 transition"></div>
+                    <div class="bg-red-50 p-6 rounded-xl border border-red-100 hover:border-red-300 transition shadow-sm">
+                        <span class="text-xs font-bold text-red-600 uppercase tracking-wide mb-1 block">The Tragedy</span>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">예상치 못한 보복</h3>
+                        <p class="text-slate-600">
+                            도움의 손길은 참혹한 보복 폭행으로 돌아왔습니다. 물리적 폭력의 고통 속에 쓰러져야만 했습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[14px] top-0 w-6 h-6 bg-slate-500 rounded-full border-4 border-white shadow-md group-hover:scale-110 transition"></div>
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-slate-300 transition shadow-sm">
+                        <span class="text-xs font-bold text-slate-600 uppercase tracking-wide mb-1 block">The Aftermath</span>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">병상에서의 시간</h3>
+                        <p class="text-slate-600">
+                            병원 천장을 바라보며 육체적 고통보다 더 큰 마음의 상처를 마주했습니다. 학교는 보호해주지 않았고, 행정은 불공정했습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Turning Point: Why? (Chart) -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <!-- Left: Narrative -->
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-slate-800 serif-font leading-snug">
+                    ⚖️ "왜 약자는<br>보호받지 못하는가?"
+                </h2>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    병상에서 소년 맹수석은 근원적인 질문을 던졌습니다. 학교라는 작은 사회조차 약자를 보호하지 못하는 현실. 
+                    시스템의 부재와 불공정한 행정 처리는 단순한 분노를 넘어 <strong>'제도적 변화'</strong>에 대한 갈망을 불러일으켰습니다.
+                </p>
+                <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500 italic text-slate-700">
+                    "법과 규칙은 강자의 도구가 아니라, 약자의 방패여야 한다."
+                </div>
+            </div>
+
+            <!-- Right: Visualization (Systemic Failure Analysis) -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100">
+                <h3 class="text-center font-bold text-slate-700 mb-6">당시 느꼈던 사회적 모순 분석</h3>
+                <!-- Chart Container -->
+                <div class="chart-container">
+                    <canvas id="contradictionChart"></canvas>
+                </div>
+                <p class="text-center text-xs text-slate-400 mt-4">소년의 눈에 비친 이상과 현실의 괴리</p>
+            </div>
+        </section>
+
+        <!-- 3. Transformation: Healing Law -->
+        <section class="bg-slate-800 text-white rounded-3xl p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+            
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <div class="mb-8">
+                    <i class="fas fa-book-open text-5xl text-blue-400 mb-6 pulse-slow"></i>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 serif-font">시련을 넘어 '치유의 법학'으로</h2>
+                    <div class="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
+                </div>
+                
+                <p class="text-lg md:text-xl text-slate-300 leading-relaxed mb-10">
+                    고통의 시간은 저를 무너뜨린 것이 아니라, 더 단단한 법학자로 세웠습니다.<br>
+                    법의 본질은 처벌이 아닌, <strong>상처의 치유</strong>와 <strong>공동체의 회복</strong>에 있음을 깨달았습니다.
+                </p>
+
+                <!-- Interactive Concept Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+                    <div class="bg-slate-700/50 p-5 rounded-xl border border-slate-600 hover:bg-slate-700 transition">
+                        <h4 class="font-bold text-blue-300 mb-2"><i class="fas fa-shield-alt mr-2"></i>보호</h4>
+                        <p class="text-sm text-slate-300">약자를 위한 최후의 보루로서의 법</p>
+                    </div>
+                    <div class="bg-slate-700/50 p-5 rounded-xl border border-slate-600 hover:bg-slate-700 transition">
+                        <h4 class="font-bold text-green-300 mb-2"><i class="fas fa-handshake mr-2"></i>조정</h4>
+                        <p class="text-sm text-slate-300">갈등을 중재하고 화해시키는 역할</p>
+                    </div>
+                    <div class="bg-slate-700/50 p-5 rounded-xl border border-slate-600 hover:bg-slate-700 transition">
+                        <h4 class="font-bold text-amber-300 mb-2"><i class="fas fa-heart mr-2"></i>치유</h4>
+                        <p class="text-sm text-slate-300">상처받은 개인과 사회를 회복시킴</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Future Vision: Daejeon Education Promise -->
+        <section class="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-sm">
+            <div class="text-center mb-10">
+                <span class="text-blue-600 font-bold tracking-wider text-sm uppercase">Promise</span>
+                <h2 class="text-3xl font-bold text-slate-800 mt-2 serif-font">대전 교육, '안전'과 '정의'의 울타리가 되겠습니다</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-red-500 text-xl">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">폭력 없는 학교</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            어떤 이유로도 폭력은 정당화될 수 없습니다. 피해 학생 중심의 보호 시스템을 강화하고, 안전한 학교 환경을 최우선으로 조성하겠습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-500 text-xl">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">공정한 행정</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            불공정한 처사로 두 번 상처받는 아이가 없도록 하겠습니다. 투명하고 원칙 있는 행정으로 학교의 신뢰를 회복하겠습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer / Next Episode Teaser -->
+        <div class="text-center pt-8 border-t border-slate-200">
+            <p class="text-slate-500 italic mb-6">"소년 맹수석이 던졌던 그 간절한 질문에, 이제 대전 교육이 답하겠습니다."</p>
+            
+            <div class="inline-flex items-center justify-center space-x-3 text-sm text-slate-400 mb-8">
+                <span>#대전교육</span>
+                <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+                <span>#학교폭력극복</span>
+                <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+                <span>#정의로운교육</span>
+            </div>
+
+            <button onclick="alert('다음 에피소드는 [140여 편의 논문에 담긴 진심: 법학자 맹수석] 입니다.')" class="text-slate-500 hover:text-blue-600 transition font-medium text-sm flex items-center justify-center mx-auto">
+                다음 이야기: 법학자로서의 성장 <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+
+    </main>
+
+    <script>
+        // --- Interactions ---
+
+        // 1. Scroll Smoothly
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 2. Chart.js Implementation - Visualizing the "Why?" (Ideal vs Reality)
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('contradictionChart').getContext('2d');
+            
+            const data = {
+                labels: ['학교의 보호 (Protection)', '행정의 공정성 (Fairness)', '정의의 실현 (Justice)', '개인의 안전 (Safety)'],
+                datasets: [
+                    {
+                        label: '소년이 기대한 이상 (Ideal)',
+                        data: [90, 95, 100, 90],
+                        backgroundColor: 'rgba(59, 130, 246, 0.5)', // Blue-500
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '당시 겪은 현실 (Reality)',
+                        data: [20, 30, 15, 25], // Low values representing the trauma and systemic failure
+                        backgroundColor: 'rgba(239, 68, 68, 0.5)', // Red-500
+                        borderColor: 'rgba(239, 68, 68, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            };
+
+            const config = {
+                type: 'bar',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false, // Critical for container responsiveness
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { color: '#f1f5f9' },
+                            ticks: { display: false } // Abstract representation
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: { family: "'Noto Sans KR', sans-serif" }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            padding: 12,
+                            cornerRadius: 8,
+                            titleFont: { family: "'Noto Sans KR', sans-serif", size: 14 },
+                            bodyFont: { family: "'Noto Sans KR', sans-serif", size: 13 }
+                        }
+                    },
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    }
+                }
+            };
+
+            new Chart(ctx, config);
+        });
+    </script>
+
+    <!-- Visualization & Content Choices:
+         1. Hero Section -> Dark/Serious tone -> Emphasizes the weight of the incident.
+         2. Timeline Section -> Vertical layout -> Clearly narrates the sequence of events.
+         3. Bar Chart -> Contrast Visualization (Ideal vs. Reality) -> Analytically shows the "Why?" behind his career choice.
+         4. Concept Cards -> Icons & Text -> Summarizes the transformation into a legal scholar.
+         5. Promise Section -> Grid Layout -> Connects past pain to future policy commitments.
+         CONFIRMATION: NO SVG graphics used (FontAwesome used). NO Mermaid JS used. -->
+</body>
+</html>
