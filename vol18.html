@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맹수석의 미래교육 리포트 #18: 광장의 진정성</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&family=Jua&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fdfbf7; /* Warm background like report #1 */
+            color: #2d3748;
+        }
+        
+        .serif-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .candlelight-bg {
+            background: radial-gradient(circle at center, rgba(255, 223, 0, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d97706; /* Amber-600 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b45309; /* Amber-700 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Chosen Palette: [Candlelight Warmth] - Deep Amber (Passion/Light), Dark Charcoal (Night/Seriousness), Warm White (Hope).
+         Reflects the theme of "Conscience in Action" and "Square". -->
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-[#fdfbf7]/90 backdrop-blur-sm border-b border-stone-200 py-3 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
+            <div class="font-bold text-stone-700 text-lg"><i class="fas fa-bullhorn mr-2 text-amber-600"></i>미래교육 리포트</div>
+            <div class="text-sm text-stone-500">Vol. 18: 광장의 진정성</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-slate-900 text-white pt-24 pb-32 overflow-hidden">
+        <div class="absolute inset-0 candlelight-bg opacity-30"></div>
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-in">
+            <span class="inline-block py-1 px-3 rounded-full bg-slate-800 border border-slate-600 text-slate-300 text-xs font-bold mb-6 tracking-widest">
+                <i class="fas fa-fist-raised mr-1"></i>행동하는 양심
+            </span>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight serif-font text-amber-400">
+                "행동하는 양심이 머무는 곳,<br>
+                <span class="text-white border-b-4 border-amber-600">광장</span>은 저에게 가장 뜨거운 교실이었습니다"
+            </h1>
+            <p class="text-xl text-slate-300 mb-8 font-light">"교수님, 왜 연구실보다 차가운 아스팔트 위에 더 자주 계시나요?"</p>
+            
+            <div class="flex justify-center gap-4">
+                <div class="animate-bounce bg-white/10 p-3 rounded-full border border-white/20 text-white">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 -mt-10 relative z-20 pb-20 space-y-24">
+
+        <!-- 1. The Core Message: Beyond the Classroom -->
+        <section class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-stone-200 fade-in text-center relative overflow-hidden">
+            <div class="max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold text-stone-800 mb-2 serif-font"><i class="fas fa-door-open text-amber-500 mr-2"></i>강의실을 넘어 시대로</h3>
+                <p class="text-stone-600 mb-8">연구실의 안락함을 뒤로하고 정의를 외치다</p>
+
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-amber-500">
+                        <h4 class="font-bold text-slate-800 mb-2">현장에서의 법치</h4>
+                        <p class="text-sm text-slate-600">
+                            시청 앞 광장에서 시민들과 어깨를 나란히 하고 구호를 외치던 순간들. 법의 정신이 살아 숨 쉬는 가장 역동적인 교육 현장이었습니다.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-slate-500">
+                        <h4 class="font-bold text-slate-800 mb-2">연대의 힘</h4>
+                        <p class="text-sm text-slate-600">
+                            교수라는 지위의 무게를 내려놓고 시민들의 거친 손을 맞잡으며, 진정한 교육은 타인의 아픔에 공감하고 행동하는 데 있음을 배웠습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Student Testimonial: Song Sang-young -->
+        <section class="fade-in">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-stone-800 serif-font">🤝 제자의 기억</h2>
+                <p class="text-stone-600 mt-2">제자 송상영이 본 '행동하는 스승 맹수석'</p>
+            </div>
+
+            <div class="bg-amber-50 p-8 rounded-2xl border border-amber-100 shadow-sm relative">
+                <i class="fas fa-quote-left text-4xl text-amber-200 absolute top-6 left-6"></i>
+                <div class="relative z-10 pl-8 pt-4">
+                    <p class="text-lg text-slate-700 leading-relaxed italic mb-6">
+                        "교수님은 우리에게 법리를 암기하라고만 하지 않으셨습니다. 대신 그 법이 광장의 약자들을 위해 어떻게 쓰여야 하는지를 삶으로 직접 보여주셨죠. 교수님과 함께 촛불을 들었던 기억은 지식이 어떻게 실천으로 변하는지 깨닫게 해준 소중한 가르침이었습니다."
+                    </p>
+                    <div class="flex items-center justify-end">
+                        <div class="text-right">
+                            <p class="font-bold text-slate-800">송상영</p>
+                            <p class="text-xs text-slate-500">당시 제자</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Educational Philosophy Visualization (Chart) -->
+        <section class="bg-slate-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl fade-in">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4 serif-font text-amber-400"><i class="fas fa-balance-scale mr-2"></i>교육의 균형</h3>
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        맹수석에게 교육이란 단순한 정보 전달이 아닙니다.<br>
+                        지식과 실천, 이성과 공감이 조화를 이루는<br>
+                        <strong>'민주시민'</strong>을 길러내는 일입니다.
+                    </p>
+                </div>
+                <!-- Chart Area -->
+                <div class="md:w-1/2 w-full">
+                    <div class="bg-slate-900 p-4 rounded-2xl shadow-inner">
+                        <h4 class="text-center text-slate-400 text-sm mb-4">맹수석의 교육 가치 (Core Values)</h4>
+                        <div class="chart-container">
+                            <canvas id="educationValueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Vision Promise -->
+        <section class="text-center py-12 border-t border-stone-200 mt-8 fade-in bg-white rounded-b-3xl">
+            <div class="mb-6">
+                <i class="fas fa-hand-holding-heart text-6xl text-amber-600"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-stone-900 mb-6 serif-font">
+                "광장의 <span class="text-amber-600">진정성</span>으로<br>대전 교육의 미래를 열겠습니다"
+            </h2>
+            <p class="text-lg text-stone-700 mb-8 max-w-2xl mx-auto">
+                우리 아이들이 자신의 목소리를 당당히 내고,<br>
+                이웃의 아픔을 외면하지 않는 따뜻한 시민으로 성장하도록<br>
+                현장에서 발로 뛰며 소통하는 교육 행정가가 되겠습니다.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <span class="bg-slate-100 text-stone-600 px-3 py-1 rounded-full text-xs border border-stone-300">#대전교육</span>
+                <span class="bg-slate-100 text-stone-600 px-3 py-1 rounded-full text-xs border border-stone-300">#맹수석</span>
+                <span class="bg-slate-100 text-stone-600 px-3 py-1 rounded-full text-xs border border-stone-300">#민주시민교육</span>
+                <span class="bg-slate-100 text-stone-600 px-3 py-1 rounded-full text-xs border border-stone-300">#광장의진정성</span>
+                <span class="bg-slate-100 text-stone-600 px-3 py-1 rounded-full text-xs border border-stone-300">#실천하는지식인</span>
+                <span class="bg-slate-100 text-stone-600 px-3 py-1 rounded-full text-xs border border-stone-300">#행동하는양심</span>
+            </div>
+
+            <button onclick="alert('다음 에피소드 [맹수석의 미래교육 리포트 #19: 낙오자 없는 교육, 그 약속을 믿는 이유]로 이어집니다.')" class="bg-slate-700 hover:bg-slate-800 text-white px-8 py-3 rounded-full shadow-lg transition flex items-center justify-center mx-auto font-medium">
+                다음 이야기: 낙오자 없는 교육 <i class="fas fa-chevron-right ml-2"></i>
+            </button>
+        </section>
+
+    </main>
+
+    <script>
+        // --- Interactions ---
+
+        // 1. Chart.js Implementation - Education Values Radar Chart
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('educationValueChart').getContext('2d');
+            
+            const data = {
+                labels: ['지식 (Knowledge)', '실천 (Action)', '공감 (Empathy)', '정의 (Justice)', '소통 (Communication)'],
+                datasets: [
+                    {
+                        label: '맹수석의 교육 지향점',
+                        data: [90, 100, 95, 98, 92],
+                        backgroundColor: 'rgba(251, 191, 36, 0.4)', // Amber-400
+                        borderColor: 'rgba(251, 191, 36, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#fff'
+                    },
+                    {
+                        label: '기존 주입식 교육',
+                        data: [95, 40, 30, 50, 40],
+                        backgroundColor: 'rgba(148, 163, 184, 0.2)', // Slate
+                        borderColor: 'rgba(148, 163, 184, 0.5)',
+                        borderWidth: 1,
+                        pointBackgroundColor: 'transparent',
+                        pointBorderColor: 'transparent'
+                    }
+                ]
+            };
+
+            const config = {
+                type: 'radar',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#475569' }, // Slate-600
+                            grid: { color: '#475569' },
+                            pointLabels: {
+                                font: { family: "'Noto Sans KR', sans-serif", size: 11, weight: 'bold' },
+                                color: '#cbd5e1' // Slate-300
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { 
+                            position: 'bottom',
+                            labels: { color: '#e2e8f0' }
+                        }
+                    }
+                }
+            };
+
+            new Chart(ctx, config);
+        });
+    </script>
+    
+    <!-- Visualization & Content Choices: 
+         1. Hero Section -> Dark/Serious but Hopeful -> Slate background with Amber highlights (Candlelight).
+         2. Concept Grid -> Contrast Layout -> Highlights "Rule of Law in Field" vs "Power of Solidarity".
+         3. Testimonial Card -> Quote Focus -> Emphasizes the disciple's perspective on "Action".
+         4. Radar Chart -> Value Comparison -> Visually demonstrates the balance of Knowledge vs Action in his philosophy.
+         CONFIRMATION: NO SVG graphics used (FontAwesome used for icons). NO Mermaid JS used. -->
+</body>
+</html>
