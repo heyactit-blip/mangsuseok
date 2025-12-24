@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맹수석의 미래교육 리포트 #20: 새로운 길</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fcfcfc;
+            color: #1a202c;
+        }
+        
+        .serif-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .gold-accent {
+            color: #d4af37;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .path-line {
+            width: 2px;
+            background: linear-gradient(to bottom, #d4af37, transparent);
+            height: 100px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 py-4 shadow-sm">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <div class="font-bold text-slate-800 text-lg">
+                미래교육 리포트
+            </div>
+            <div class="text-xs md:text-sm text-amber-700 font-bold tracking-tight">Vol.20 대전 교육의 새로운 길 (최종회)</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white pt-28 pb-40 text-center px-6 relative overflow-hidden">
+        <div class="max-w-3xl mx-auto fade-in relative z-10">
+            <span class="inline-block py-1 px-4 rounded-full bg-white/10 border border-white/20 text-amber-400 text-xs font-bold mb-8 tracking-widest uppercase">The Final Episode</span>
+            <h1 class="text-3xl md:text-5xl font-bold mb-8 serif-font leading-tight">
+                "대전 교육의 <span class="text-amber-400">새로운 길</span>,<br>이제 여러분과 함께 걷겠습니다"
+            </h1>
+            <p class="text-slate-300 text-lg font-light leading-relaxed">
+                20회의 여정을 마무리하며,<br>현장의 목소리가 정책이 되는 대전의 내일을 선언합니다.
+            </p>
+        </div>
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 C 20 0, 50 0, 100 100" stroke="white" fill="transparent" />
+            </svg>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 -mt-20 space-y-12 pb-24 relative z-20">
+        
+        <!-- Summary Card -->
+        <section class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-slate-100 fade-in">
+            <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed serif-font text-lg text-center italic mb-10">
+                "때로는 법학자로서 고뇌를, 때로는 스승의 온기를,<br>
+                그리고 무엇보다 대전 시민들의 간절한 목소리를 담았습니다."
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-slate-800 text-xl">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800">현장이 '법'이 되는 행정</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        보여주기식 행정이 아닌, 교실의 먼지를 마시고 선생님들의 땀방울을 닦으며 현장의 답을 정책으로 만들겠습니다.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 text-xl">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800">따뜻한 '교육 공동체'</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        단 한 아이도 소외되지 않는 '책임 교육'을 실현하겠습니다. 대덕특구의 기술이 아이들의 미래를 밝히는 거버넌스를 구축합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Visualization -->
+        <section class="bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-200 fade-in">
+            <h2 class="text-2xl font-bold serif-font text-center mb-10 text-slate-800">맹수석의 3대 교육 약속</h2>
+            
+            <div class="space-y-8">
+                <div class="flex items-start gap-6 bg-white p-6 rounded-2xl shadow-sm">
+                    <span class="text-4xl font-black text-slate-200">01</span>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1 italic">"전문성 위에 핀 공정"</h4>
+                        <p class="text-slate-600 text-sm">법학적 전문성으로 '교육 소비자'인 학생과 학부모를 지키는 든든한 방패가 되겠습니다.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-6 bg-white p-6 rounded-2xl shadow-sm">
+                    <span class="text-4xl font-black text-slate-200">02</span>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1 italic">"답은 언제나 현장에"</h4>
+                        <p class="text-slate-600 text-sm">현장의 목소리를 이기는 이론은 없습니다. 권위를 내려놓고 현장 중심 정책을 펼치겠습니다.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-6 bg-white p-6 rounded-2xl shadow-sm">
+                    <span class="text-4xl font-black text-slate-200">03</span>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1 italic">"교육이 대전의 긍지가 되게"</h4>
+                        <p class="text-slate-600 text-sm">숫자로 평가받는 아이들이 아닌, 자신의 꿈으로 반짝이는 아이들을 보는 교육감이 되겠습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Message -->
+        <section class="text-center py-12 fade-in">
+            <div class="path-line"></div>
+            <i class="fas fa-pen-nib text-slate-300 text-3xl mb-6"></i>
+            <h3 class="text-2xl font-bold text-slate-900 mb-6 serif-font leading-relaxed">
+                "결코 서두르지 않되 쉬지도 않겠습니다.<br>
+                여러분의 손을 잡고 함께 걷고 싶습니다."
+            </h3>
+            <p class="text-slate-500 mb-10">교육이 있어 행복한 대전, 그 출발선에 서서</p>
+            
+            <div class="flex flex-wrap justify-center gap-2 max-w-xl mx-auto">
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-medium">#대전교육</span>
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-medium">#맹수석</span>
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-medium">#미래교육리포트</span>
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-medium">#최종회</span>
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-medium">#함께걷는교육</span>
+                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-medium">#책임교육</span>
+            </div>
+        </section>
+
+        <!-- Closing Signature -->
+        <footer class="bg-white border border-slate-200 rounded-3xl p-10 text-center shadow-sm">
+            <p class="text-slate-400 text-sm mb-4">맹수석의 미래교육 리포트 연재를 마칩니다.</p>
+            <div class="serif-font text-xl font-bold text-slate-800">진심으로 감사드립니다.</div>
+        </footer>
+
+    </main>
+
+</body>
+</html>
