@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맹수석의 미래교육 리포트 #13: 현장 소통</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&family=Jua&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f0f9ff; /* Very light blue for openness */
+            color: #0c4a6e;
+        }
+        
+        .serif-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .speech-bubble {
+            position: relative;
+            background: #fff;
+            border-radius: .4em;
+        }
+
+        .speech-bubble:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-top-color: #fff;
+            border-bottom: 0;
+            border-left: 0;
+            margin-left: -10px;
+            margin-bottom: -20px;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0f2fe; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38bdf8; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9; 
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Chosen Palette: [Open Communication] - Sky Blue (Openness/Transparency), Deep Blue (Trust/Authority), Warm Gray (Ground/Field).
+         Reflects the theme of "Breaking Walls" and "Listening". -->
+
+    <!-- Application Structure Plan:
+         1. Hero: Visualizing "Breaking the Wall". Title: "The Answer is in the Field".
+         2. The Problem (Visual): Top-Down vs. Bottom-Up contrast.
+         3. The Philosophy (Card): "Administration without Field Knowledge is Violence".
+         4. The Solution (Interactive Grid): "Visiting Office", "Communication Committee", "Conflict Team".
+         5. The Change (Chart): Visualizing the reduction of "Unresolved Complaints" and rise of "Trust".
+         6. Promise: Emotional closing on "Sincerity". -->
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-[#f0f9ff]/95 backdrop-blur-md border-b border-sky-200 py-4 shadow-sm">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <div class="font-bold text-sky-900 text-lg"><i class="fas fa-bullhorn mr-2 text-sky-600"></i>미래교육 리포트</div>
+            <div class="text-sm text-sky-700 font-medium">Vol. 13: 소통 행정</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-gradient-to-br from-sky-500 to-blue-600 text-white pt-24 pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/speech-bubbles.png')] opacity-10"></div>
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-in">
+            <span class="inline-block py-1 px-3 rounded-full bg-sky-800/30 border border-sky-300 text-sky-100 text-xs font-bold mb-6 tracking-widest">
+                <i class="fas fa-shoe-prints mr-1"></i>현장 리포트
+            </span>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight serif-font">
+                "불통의 벽을 허물고,<br>
+                <span class="text-yellow-300 border-b-4 border-yellow-400">현장</span>에서 답을 찾습니다"
+            </h1>
+            <p class="text-xl text-sky-100 mb-8 font-light">"왜 교육청의 결정은 늘 현장과 따로 놀까요?<br>그 물음에 맹수석이 발로 뛰며 답하겠습니다."</p>
+            
+            <div class="flex justify-center gap-4">
+                <div class="animate-bounce bg-white/20 p-3 rounded-full border border-white/30 text-white">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 -mt-10 relative z-20 pb-20 space-y-24">
+
+        <!-- 1. The Reality: The Wall of Disconnect -->
+        <section class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-sky-100 fade-in text-center relative">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-slate-700 mb-2 serif-font">🚧 불통의 악순환</h2>
+                <p class="text-slate-500">현장의 목소리가 막힌 현재의 구조</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 relative z-10">
+                <!-- Admin Tower -->
+                <div class="p-6 bg-slate-100 rounded-xl border border-slate-300 w-full md:w-1/3">
+                    <div class="text-4xl text-slate-400 mb-2"><i class="fas fa-building"></i></div>
+                    <h3 class="font-bold text-slate-700">교육청 (Admin)</h3>
+                    <p class="text-sm text-slate-500 mt-1">탁상공론 & 일방적 지시</p>
+                </div>
+
+                <!-- The Wall -->
+                <div class="flex flex-col items-center">
+                    <div class="h-16 w-1 bg-red-400"></div>
+                    <div class="bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm shadow-md z-20">
+                        <i class="fas fa-times-circle mr-1"></i> 불통 (Wall)
+                    </div>
+                    <div class="h-16 w-1 bg-red-400"></div>
+                </div>
+
+                <!-- The Field -->
+                <div class="p-6 bg-slate-100 rounded-xl border border-slate-300 w-full md:w-1/3">
+                    <div class="text-4xl text-slate-400 mb-2"><i class="fas fa-school"></i></div>
+                    <h3 class="font-bold text-slate-700">학교 현장 (Field)</h3>
+                    <p class="text-sm text-slate-500 mt-1">답답함 & 갈등 심화</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Solution: Prescription Cards -->
+        <section class="fade-in">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-sky-900 serif-font">💊 맹수석의 소통 처방전</h2>
+                <p class="text-sky-600 mt-2">현장을 모르는 행정은 폭력입니다. 이제 바꿉니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Solution 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-sky-500 hover:shadow-lg transition group transform hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-sky-100 rounded-full flex items-center justify-center text-sky-600 mb-4 group-hover:bg-sky-600 group-hover:text-white transition">
+                        <i class="fas fa-walking"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">찾아가는 교육감실</h3>
+                    <p class="text-gray-600 text-sm">
+                        집무실이 아닌 <strong>학교로 출근</strong>합니다. 매주 하루, 현장에서 직접 듣고 봅니다.
+                    </p>
+                </div>
+
+                <!-- Solution 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-500 hover:shadow-lg transition group transform hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">현장 소통 위원회</h3>
+                    <p class="text-gray-600 text-sm">
+                        정책 수립 단계부터 교사와 학부모가 참여하여 <strong>부작용을 사전 필터링</strong>합니다.
+                    </p>
+                </div>
+
+                <!-- Solution 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-indigo-500 hover:shadow-lg transition group transform hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4 group-hover:bg-indigo-600 group-hover:text-white transition">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">갈등 해결 전담 부서</h3>
+                    <p class="text-gray-600 text-sm">
+                        학교 신설, 과밀학급 등 첨예한 현안을 <strong>전문적으로 중재하고 조정</strong>합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The Transformation: Impact Chart -->
+        <section class="bg-sky-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl fade-in">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4 serif-font text-sky-100"><i class="fas fa-chart-line text-yellow-400 mr-2"></i>변화의 기대 효과</h3>
+                    <p class="text-sky-200 leading-relaxed mb-6">
+                        "불통은 오해를 낳지만, 진정한 소통은 갈등을 성장의 동력으로 바꿉니다."<br>
+                        시스템이 바뀌면 결과가 달라집니다.
+                    </p>
+                    <div class="bg-sky-800/50 p-4 rounded-lg border-l-4 border-sky-400">
+                        <p class="text-sm text-sky-100">
+                            <strong>경청의 리더십:</strong><br>
+                            로스쿨 원장과 중재원장으로서 증명한 '조정 역량'을 대전 교육에 이식합니다.
+                        </p>
+                    </div>
+                </div>
+                <!-- Chart Area -->
+                <div class="md:w-1/2 w-full">
+                    <div class="bg-sky-950 p-4 rounded-2xl shadow-inner">
+                        <h4 class="text-center text-sky-300 text-sm mb-4">소통 행정 도입 시 변화 (Simulation)</h4>
+                        <div class="chart-container">
+                            <canvas id="communicationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Vision & Promise -->
+        <section class="bg-white border border-sky-100 rounded-2xl p-8 shadow-sm fade-in text-center mt-12">
+            <i class="fas fa-quote-left text-4xl text-sky-200 mb-4"></i>
+            <h3 class="text-2xl font-bold text-sky-900 mb-6 serif-font">소통은 기술이 아니라 '진심'입니다</h3>
+            <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">
+                학폭 피해자로 울어봤던 소년 맹수석의 심정으로,<br>
+                현장에서 소외되고 상처받는 이들의 목소리를 가장 크게 듣겠습니다.<br>
+                <strong>'대전 교육 소통 시대'</strong>를 여러분과 함께 열겠습니다.
+            </p>
+            
+            <div class="flex justify-center gap-2">
+                <span class="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-xs">#대전교육</span>
+                <span class="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-xs">#맹수석</span>
+                <span class="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-xs">#소통행정</span>
+                <span class="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-xs">#현장중심</span>
+            </div>
+        </section>
+
+        <!-- Footer Navigation -->
+        <div class="text-center py-10 mt-8">
+            <button onclick="alert('다음 에피소드 [현장 리포트 #14: 금융 소비자 보호의 선구자, 교육 소비자를 지키다]로 이어집니다.')" class="bg-sky-600 hover:bg-sky-700 text-white px-8 py-3 rounded-full shadow-lg transition flex items-center justify-center mx-auto font-medium">
+                다음 이야기: 권익 보호 <i class="fas fa-chevron-right ml-2"></i>
+            </button>
+        </div>
+
+    </main>
+
+    <script>
+        // --- Interactions ---
+
+        // 1. Chart.js Implementation - Communication Impact
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('communicationChart').getContext('2d');
+            
+            const data = {
+                labels: ['현장 만족도 (Satisfaction)', '정책 신뢰도 (Trust)', '갈등 해결 속도 (Speed)', '민원 발생률 (Complaints)'],
+                datasets: [
+                    {
+                        label: '기존 행정 (Traditional)',
+                        data: [40, 35, 30, 80], // Low satisfaction, high complaints
+                        backgroundColor: 'rgba(148, 163, 184, 0.3)', // Slate-400
+                        borderColor: 'rgba(148, 163, 184, 0.8)',
+                        borderWidth: 1,
+                        pointRadius: 3
+                    },
+                    {
+                        label: '소통 행정 (Communicative)',
+                        data: [90, 85, 90, 20], // High satisfaction, low complaints
+                        backgroundColor: 'rgba(56, 189, 248, 0.4)', // Sky-400
+                        borderColor: 'rgba(56, 189, 248, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#fff',
+                        pointBorderColor: 'rgba(56, 189, 248, 1)',
+                        pointRadius: 5
+                    }
+                ]
+            };
+
+            const config = {
+                type: 'radar',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true,
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            pointLabels: {
+                                font: {
+                                    family: "'Noto Sans KR', sans-serif",
+                                    size: 11,
+                                    weight: 'bold'
+                                },
+                                color: '#bae6fd' // Light sky blue text
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: {
+                                display: false,
+                                backdropColor: 'transparent'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#e0f2fe',
+                                font: { family: "'Noto Sans KR', sans-serif" }
+                            },
+                            position: 'bottom'
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(12, 74, 110, 0.9)',
+                            titleFont: { family: "'Noto Sans KR', sans-serif" },
+                            bodyFont: { family: "'Noto Sans KR', sans-serif" },
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.raw + (context.label.includes('발생률') ? '%' : '점');
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            new Chart(ctx, config);
+        });
+    </script>
+
+    <!-- Visualization & Content Choices:
+         1. Hero Section -> Openness Theme -> Sky blue gradients, Speech bubble patterns.
+         2. Reality Section -> Diagrammatic Layout -> Visualizes the "Disconnect" effectively.
+         3. Solution Grid -> Icon Cards -> Details the 3 key pillars of the communication strategy.
+         4. Impact Chart -> Radar Chart -> Compares the qualitative shifts (Trust, Satisfaction) vividly.
+         CONFIRMATION: NO SVG graphics used (FontAwesome used). NO Mermaid JS used. -->
+</body>
+</html>
