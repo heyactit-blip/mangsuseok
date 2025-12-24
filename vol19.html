@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맹수석의 미래교육 리포트 #19: 낙오자 없는 교육</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fdfbf7; /* 따뜻하고 포근한 아이보리 톤 배경 */
+            color: #2d3748;
+        }
+        
+        .serif-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .next-story-btn {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation (Text positions updated) -->
+    <nav class="sticky top-0 z-50 bg-[#fdfbf7]/90 backdrop-blur-md border-b border-orange-100 py-4 shadow-sm">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <div class="font-bold text-slate-800 text-lg flex items-center">
+                미래교육 리포트 <i class="fas fa-hands-holding-child ml-2 text-orange-500"></i>
+            </div>
+            <div class="text-xs md:text-sm text-amber-800 font-bold tracking-tight">Vol.19 낙오자 없는 교육</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-[#2d3436] text-white pt-24 pb-32 text-center px-6 relative overflow-hidden">
+        <div class="max-w-3xl mx-auto fade-in relative z-10">
+            <span class="inline-block py-1 px-4 rounded-full bg-orange-500/20 border border-orange-500/50 text-orange-300 text-xs font-bold mb-6 tracking-widest uppercase">Inclusive Education</span>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 serif-font leading-tight">
+                "가장 늦게 오는 아이의<br><span class="text-orange-400">손을 잡아주는 교육</span>"
+            </h1>
+            <p class="text-slate-300 text-lg font-light">속도보다 방향, 그리고 '함께'의 가치를 믿습니다.</p>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 via-amber-200 to-orange-400"></div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 -mt-10 space-y-12 pb-20">
+        
+        <!-- Section 1: Philosophy -->
+        <section class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-orange-50 fade-in">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 mr-4">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h2 class="text-2xl font-bold serif-font text-slate-800">대전형 '교육 희망 사다리'</h2>
+            </div>
+            <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed mb-8">
+                <p class="mb-4">아이들이 처한 환경은 제각각이지만, 배움의 기회만큼은 평등해야 합니다. 맹수석은 <strong>학습, 심리, 복지</strong>가 통합된 다층적 안전망을 구축하여 단 한 명의 아이도 소외되지 않도록 세심하게 살핍니다.</p>
+                <p>단순한 지식 전달을 넘어, 아이들의 자존감을 회복시키고 스스로 일어설 수 있는 힘을 길러주는 것, 그것이 맹수석이 꿈꾸는 '따뜻한 교육'의 본질입니다.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-2xl bg-orange-50 border border-orange-100">
+                    <h4 class="font-bold text-slate-800 mb-2 flex items-center">
+                        <i class="fas fa-check-circle text-orange-500 mr-2"></i> 맞춤형 기초학력 보장
+                    </h4>
+                    <p class="text-sm text-slate-600">AI 보조교사와 1:1 멘토링을 결합한 개별화 학습 지원</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-amber-50 border border-amber-100">
+                    <h4 class="font-bold text-slate-800 mb-2 flex items-center">
+                        <i class="fas fa-check-circle text-amber-500 mr-2"></i> 정서적 안전망 강화
+                    </h4>
+                    <p class="text-sm text-slate-600">전문 상담 인력 배치 및 찾아가는 마음 건강 서비스 확대</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Support Focus -->
+        <section class="bg-white rounded-3xl shadow-lg p-8 md:p-12 border border-slate-100 fade-in text-center">
+            <h3 class="text-xl font-bold mb-2 serif-font text-slate-800">교육 격차 해소를 위한 중점 과제</h3>
+            <p class="text-sm text-slate-500 mb-8">분야별 지원 집중도 시뮬레이션</p>
+            <div class="chart-container">
+                <canvas id="supportChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Hash Tags Section -->
+        <section class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm fade-in text-center mt-12">
+            <i class="fas fa-quote-left text-3xl text-orange-200 mb-4"></i>
+            <h3 class="text-2xl font-bold text-slate-900 mb-6 serif-font">당신의 아이를 위해 맹수석이 깨어 있겠습니다</h3>
+            
+            <div class="flex flex-wrap justify-center gap-3 mb-2">
+                <span class="bg-slate-50 text-slate-600 px-4 py-1.5 rounded-full text-sm border border-slate-200">#대전교육</span>
+                <span class="bg-slate-50 text-slate-600 px-4 py-1.5 rounded-full text-sm border border-slate-200">#맹수석</span>
+                <span class="bg-slate-50 text-slate-600 px-4 py-1.5 rounded-full text-sm border border-slate-200">#낙오자없는교육</span>
+                <span class="bg-slate-50 text-slate-600 px-4 py-1.5 rounded-full text-sm border border-slate-200">#교육안전망</span>
+                <span class="bg-slate-50 text-slate-600 px-4 py-1.5 rounded-full text-sm border border-slate-200">#성장과회복</span>
+            </div>
+        </section>
+
+        <!-- Final Episode Navigation -->
+        <div class="text-center py-10">
+            <p class="text-slate-400 text-sm mb-4">리포트 시리즈의 마지막 이야기</p>
+            <button class="next-story-btn hover:opacity-90 text-white px-10 py-4 rounded-full shadow-xl transition-all flex items-center justify-center mx-auto font-bold text-lg">
+                마지막 에피소드: 새로운 길 <i class="fas fa-arrow-right ml-3 text-orange-400"></i>
+            </button>
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('supportChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'polarArea',
+                data: {
+                    labels: ['기초학력', '심리상담', '교육복지', '특수교육', '다문화지원'],
+                    datasets: [{
+                        data: [95, 88, 92, 85, 80],
+                        backgroundColor: [
+                            'rgba(249, 115, 22, 0.6)',
+                            'rgba(245, 158, 11, 0.6)',
+                            'rgba(16, 185, 129, 0.6)',
+                            'rgba(59, 130, 246, 0.6)',
+                            'rgba(139, 92, 246, 0.6)'
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            ticks: { display: false },
+                            grid: { color: '#f1f5f9' }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: 'Noto Sans KR', size: 11 } } }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
