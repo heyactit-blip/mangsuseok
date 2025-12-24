@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맹수석의 미래교육 리포트 #12: 중재의 리더십</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&family=Jua&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8fafc; /* Cool, calm slate background representing mediation */
+            color: #334155;
+        }
+        
+        .serif-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .scale-balance-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2394a3b8' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #64748b; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Chosen Palette: [Mediation Blue] - Trustworthy Blue (Justice/Logic), Calm Gray (Neutrality), Warm Gold (Resolution/Value).
+         Reflects the role of a mediator and leader. -->
+
+    <!-- Application Structure Plan:
+         1. Hero: Professional, authoritative yet approachable visual. Title emphasizing "Mediation Leadership".
+         2. The Role (Stats): Highlighting "4000+ Cases" and "National Conflicts".
+         3. The Philosophy (Interactive Cards): "Listening", "Alternatives", "Competitiveness".
+         4. Application to Education (Flow): How mediation applies to current education conflicts (School Meals, Rights, etc.).
+         5. The Promise (Vision): "Conflict Resolution Committee" and "Win-Win Administration". -->
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 py-4 shadow-sm">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <div class="font-bold text-slate-800 text-lg"><i class="fas fa-balance-scale mr-2 text-blue-700"></i>미래교육 리포트</div>
+            <div class="text-sm text-slate-500 font-medium">Vol. 12: 중재의 리더십</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-gradient-to-br from-slate-800 to-blue-900 text-white pt-24 pb-32 overflow-hidden">
+        <div class="absolute inset-0 scale-balance-bg opacity-20"></div>
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-in">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-700/50 border border-blue-400 text-blue-100 text-xs font-bold mb-6 tracking-widest">제12화: 현장 리포트</span>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight serif-font">
+                "국가적 갈등을 풀어낸<br>
+                <span class="text-yellow-400 border-b-4 border-yellow-500">중재의 리더십</span>"
+            </h1>
+            <p class="text-xl text-blue-100 mb-8 font-light">"대결이 아닌 대화로,<br>파괴가 아닌 상생으로 답을 찾습니다."</p>
+            
+            <div class="flex justify-center gap-4">
+                <div class="animate-bounce bg-white/10 p-3 rounded-full border border-white/20 text-white">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 -mt-10 relative z-20 pb-20 space-y-24">
+
+        <!-- 1. The Achievement: 4000+ Cases -->
+        <section class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-slate-200 fade-in text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-6 opacity-5 text-9xl text-blue-900"><i class="fas fa-gavel"></i></div>
+            
+            <div class="relative z-10">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4 serif-font">⚖️ 대한상사중재원장 맹수석</h2>
+                <p class="text-slate-600 mb-8">수조 원대 국책 사업부터 기업 간 분쟁까지,<br>대한민국 치열한 갈등의 현장에서 답을 찾았습니다.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                        <div class="text-4xl font-extrabold text-blue-600 mb-2 counter" data-target="4000">4,000+</div>
+                        <div class="text-sm text-slate-500 font-bold">연간 분쟁 해결 건수</div>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                        <div class="text-4xl font-extrabold text-blue-600 mb-2">국제</div>
+                        <div class="text-sm text-slate-500 font-bold">글로벌 중재 역량 강화</div>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                        <div class="text-4xl font-extrabold text-blue-600 mb-2">상생</div>
+                        <div class="text-sm text-slate-500 font-bold">소송 비용 절감 & 화해</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Philosophy: Mediation Principles -->
+        <section class="fade-in">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-slate-800 serif-font">🤝 갈등 조정의 3원칙</h2>
+                <p class="text-slate-500 mt-2">맹수석이 현장에서 지켜온 원칙입니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Principle 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-500 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i class="fas fa-ear-listen"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">경청의 힘</h3>
+                    <p class="text-slate-600 text-sm">
+                        상대의 신발을 신어보는 것.<br>
+                        어느 한쪽도 소홀히 하지 않는 것이 신뢰의 시작입니다.
+                    </p>
+                </div>
+
+                <!-- Principle 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-green-500 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-600 group-hover:text-white transition">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">합리적 대안</h3>
+                    <p class="text-slate-600 text-sm">
+                        승자독식이 아닌 제3의 길.<br>
+                        양측이 수긍할 수 있는 상생의 해법을 제시합니다.
+                    </p>
+                </div>
+
+                <!-- Principle 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-yellow-500 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 mb-4 group-hover:bg-yellow-600 group-hover:text-white transition">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">경쟁력 강화</h3>
+                    <p class="text-slate-600 text-sm">
+                        선진적 갈등 해결 문화 정착.<br>
+                        소모적인 싸움을 멈추고 미래를 위한 경쟁력을 높입니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Application: Daejeon Education Issues (Chart) -->
+        <section class="bg-slate-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl fade-in">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4 serif-font text-blue-200"><i class="fas fa-exclamation-triangle text-yellow-400 mr-2"></i>갈등이 깊은 대전 교육</h3>
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        급식 문제, 학교 신설, 교권 vs 학생 인권...<br>
+                        갈등은 피한다고 사라지지 않습니다. 공론화하고 중재해야 합니다.
+                    </p>
+                    <div class="bg-slate-700 p-4 rounded-lg border-l-4 border-blue-400">
+                        <p class="text-sm text-slate-200">
+                            <strong>중재의 리더십 필요:</strong><br>
+                            어느 한쪽의 편을 드는 행정이 아닌,<br>
+                            서로 믿고 손잡을 수 있는 <strong>'신뢰의 다리'</strong>가 되겠습니다.
+                        </p>
+                    </div>
+                </div>
+                <!-- Chart Area -->
+                <div class="md:w-1/2 w-full">
+                    <div class="bg-slate-900 p-4 rounded-2xl shadow-inner">
+                        <h4 class="text-center text-slate-400 text-sm mb-4">교육 갈등 해결 방식 비교 (Simulation)</h4>
+                        <div class="chart-container">
+                            <canvas id="mediationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Vision: Systemic Solution -->
+        <section class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm fade-in">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="md:w-2/3">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">🏛️ '교육 분쟁 조정 위원회' 실질 운영</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        말뿐인 소통이 아니라, <strong>시스템</strong>으로 관리합니다.<br>
+                        법정으로 가기 전, 학교 공동체 내에서 전문적으로 갈등을 해결하는<br>
+                        <strong>'대전형 교육 분쟁 조정 시스템'</strong>을 구축하겠습니다.
+                    </p>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="bg-blue-50 text-blue-700 px-6 py-4 rounded-full font-bold shadow-sm border border-blue-100 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i> 갈등 비용 최소화
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Footer Vision -->
+        <section class="text-center py-12 border-t border-slate-200 mt-8 fade-in">
+            <div class="mb-6">
+                <i class="fas fa-hands-holding-circle text-6xl text-blue-600"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 serif-font">
+                "싸우지 않고 이기는<br><span class="text-blue-600">상생의 교육 행정</span>"
+            </h2>
+            <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+                대결의 광장을 화합의 광장으로 바꾸겠습니다.<br>
+                갈등을 가장 지혜롭게 풀어낼 줄 아는 전문가가 되겠습니다.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs border border-slate-200">#대전교육</span>
+                <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs border border-slate-200">#맹수석</span>
+                <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs border border-slate-200">#갈등조정</span>
+                <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs border border-slate-200">#중재전문가</span>
+            </div>
+
+            <button onclick="alert('다음 에피소드 [현장 리포트 #13: 불통의 교육 행정, 현장에 답이 있다]로 이어집니다.')" class="bg-slate-700 hover:bg-slate-800 text-white px-8 py-3 rounded-full shadow-lg transition flex items-center justify-center mx-auto font-medium">
+                다음 이야기: 소통 행정 <i class="fas fa-chevron-right ml-2"></i>
+            </button>
+        </section>
+
+    </main>
+
+    <script>
+        // --- Interactions ---
+
+        // 1. Chart.js Implementation - Mediation Benefit
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('mediationChart').getContext('2d');
+            
+            const data = {
+                labels: ['해결 시간 (Time)', '사회적 비용 (Cost)', '당사자 만족도 (Satisfaction)', '관계 회복 (Relationship)'],
+                datasets: [
+                    {
+                        label: '법적 대결/소송 (Confrontation)',
+                        data: [90, 85, 40, 20], // High cost/time, low satisfaction/recovery
+                        backgroundColor: 'rgba(239, 68, 68, 0.5)', // Red
+                        borderColor: 'rgba(239, 68, 68, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '맹수석식 중재 (Mediation)',
+                        data: [30, 25, 90, 85], // Low cost/time, high satisfaction/recovery
+                        backgroundColor: 'rgba(59, 130, 246, 0.6)', // Blue
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            };
+
+            const config = {
+                type: 'bar',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { color: '#334155' }, // Dark grid
+                            ticks: { display: false } // Abstract values
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#cbd5e1' } // Light text
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: { color: '#e2e8f0' }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                            titleColor: '#1e293b',
+                            bodyColor: '#1e293b',
+                            titleFont: { family: "'Noto Sans KR', sans-serif" },
+                            bodyFont: { family: "'Noto Sans KR', sans-serif" }
+                        }
+                    }
+                }
+            };
+
+            new Chart(ctx, config);
+        });
+    </script>
+
+    <!-- Visualization & Content Choices:
+         1. Hero Section -> Authority/Trust theme -> Blue gradients, Balance Scale imagery.
+         2. Achievement Grid -> Text stats -> Highlights the scale of his experience (4000+ cases).
+         3. Principle Cards -> Icon Cards -> Clearly defines his mediation philosophy (Listening, Alternatives).
+         4. Impact Chart -> Bar Comparison -> Visualizes the efficiency of Mediation vs Litigation (Cost, Time, Relationship).
+         5. System Proposal -> Text/Icon -> Transitions the philosophy into a concrete education policy proposal.
+         CONFIRMATION: NO SVG graphics used (FontAwesome used). NO Mermaid JS used. -->
+</body>
+</html>
