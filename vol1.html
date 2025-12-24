@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맹수석의 미래교육 리포트 #1: 홍성 소년의 꿈</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fdfbf7; /* Warm paper-like background */
+            color: #2d3748;
+        }
+        
+        .serif-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .haze-effect {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, #fdfbf7 100%);
+        }
+        
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c0b4a5; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a39585; 
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Chosen Palette: [Warm Nostalgia] - Earthy Browns, Soft Greens, Warm Beiges to reflect the rural childhood and warm memories -->
+    <!-- Application Structure Plan: A storytelling vertical scroll SPA. 
+         1. Hero: Title and emotional setting (Hongseong).
+         2. Roots Section: Interactive cards for family and background.
+         3. Values Section: The "Mother's Teaching" as a focal point.
+         4. Influences Section: Historical figures visualized.
+         5. Growth Chart: Radar chart analyzing the character traits formed during childhood.
+         6. Vision Bridge: Connecting past lessons to future Daejeon education policies. -->
+    
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-[#fdfbf7]/90 backdrop-blur-sm border-b border-stone-200 py-3 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
+            <div class="font-bold text-stone-700 text-lg"><i class="fas fa-book-open mr-2"></i>미래교육 리포트</div>
+            <div class="text-sm text-stone-500">Vol. 1: 홍성 소년의 꿈</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 pb-32 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/rice-paper.png')]"></div>
+        <div class="max-w-3xl mx-auto px-4 text-center z-10 relative fade-in">
+            <span class="inline-block py-1 px-3 rounded-full bg-stone-200 text-stone-600 text-xs font-bold mb-4 tracking-wider">제1화: 성장과 뿌리</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-stone-800 mb-6 serif-font leading-tight">
+                홍성의 아지랑이 피던 들녘,<br>
+                소년 맹수석의 꿈이 시작된 곳
+            </h1>
+            <p class="text-lg text-stone-600 leading-relaxed max-w-2xl mx-auto mb-10">
+                가난했지만 따뜻했던 유년 시절, 그곳에서 배운 '성실'과 '기개'가<br>
+                어떻게 대전 교육의 미래를 위한 단단한 뿌리가 되었는지 이야기합니다.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <button onclick="scrollToSection('roots')" class="bg-stone-700 hover:bg-stone-800 text-white px-6 py-3 rounded-lg transition shadow-lg flex items-center">
+                    이야기 시작하기 <i class="fas fa-chevron-down ml-2"></i>
+                </button>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-24 haze-effect pointer-events-none"></div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 space-y-24 pb-20">
+
+        <!-- 1. The Roots: Atmosphere & Family -->
+        <section id="roots" class="scroll-mt-24 fade-in">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-stone-800 serif-font mb-3">🌿 1959년, 봄빛 어린 중리 마을</h2>
+                <p class="text-stone-500">충청남도 홍성군, 논과 밭이 어우러진 고즈넉한 풍경</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card 1: Environment -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-stone-100 hover:shadow-lg transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-4 text-xl">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">고향의 풍경</h3>
+                    <p class="text-stone-600 leading-relaxed">
+                        아지랑이가 피어오르던 들녘, 마을을 지키던 오래된 감나무.
+                        넉넉하지 못한 형편이었지만 자연 속에서 정서적 안정을 찾으며 자랐습니다.
+                    </p>
+                </div>
+
+                <!-- Card 2: Family -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-stone-100 hover:shadow-lg transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 mb-4 text-xl">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">가족의 온기</h3>
+                    <p class="text-stone-600 leading-relaxed">
+                        매일 20리를 걸어 출근하시던 아버지와 6남매를 위해 헌신하신 어머니.
+                        등잔불 아래 모여 앉은 저녁 식사는 가장 따뜻한 기억입니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Interactive Quote: The Lesson -->
+        <section class="bg-stone-800 text-stone-100 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden shadow-xl fade-in">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10">
+                <i class="fas fa-quote-right text-9xl absolute -top-4 -left-4"></i>
+            </div>
+            
+            <h3 class="text-lg text-stone-400 mb-6 uppercase tracking-widest font-bold">어머니의 가르침</h3>
+            
+            <div class="relative z-10">
+                <p class="text-2xl md:text-3xl serif-font font-bold mb-8 leading-normal cursor-pointer hover:text-amber-200 transition" onclick="toggleMeaning()">
+                    "매사 송곳으로<br>맨 재 긁듯이 하지 말거라"
+                </p>
+                
+                <div id="quote-meaning" class="bg-stone-700/50 rounded-lg p-6 max-w-xl mx-auto backdrop-blur-sm border border-stone-600 hidden">
+                    <p class="text-lg font-light">
+                        <i class="fas fa-lightbulb text-amber-300 mr-2"></i>
+                        <strong>의미:</strong> 겉으로만 열심히 하는 척하지 말고, 속까지 꽉 차게 진심을 다해 성실히 임하라는 뜻. 이 한마디는 평생의 좌우명이 되었습니다.
+                    </p>
+                </div>
+                
+                <button onclick="toggleMeaning()" class="mt-6 text-sm text-stone-400 hover:text-white underline underline-offset-4">
+                    의미 보기 <i class="fas fa-hand-pointer ml-1"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- 3. Historical Influence & School Path -->
+        <section class="fade-in">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <!-- Text Content -->
+                <div class="md:col-span-7 space-y-6">
+                    <h2 class="text-3xl font-bold text-stone-800 serif-font">🇰🇷 역사의 숨결과 사색의 시간</h2>
+                    <p class="text-stone-600 text-lg leading-relaxed">
+                        고향 중리는 단순한 시골 마을이 아니었습니다. 독립과 기개, 헌신의 정신이 서린 곳이었습니다.
+                        어린 시절 어른들께 듣던 이야기들은 소년의 마음속에 '공동체'와 '정의'의 씨앗을 심었습니다.
+                    </p>
+                    
+                    <div class="bg-stone-50 rounded-lg p-5 border-l-4 border-stone-400">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-history mt-1 mr-3 text-stone-500"></i>
+                                <span><strong>만해 한용운 & 백야 김좌진:</strong> 지척에 있던 생가는 '기개'와 '헌신'을 가르쳐준 살아있는 교과서였습니다.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-road mt-1 mr-3 text-stone-500"></i>
+                                <span><strong>1시간의 등하굣길:</strong> 친구들과의 왁자지껄한 추억과 혼자 걷던 사색의 시간이 공존했던 배움의 길이었습니다.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Visualization -->
+                <div class="md:col-span-5 bg-white p-6 rounded-2xl shadow-lg border border-stone-100">
+                    <h3 class="text-center font-bold text-stone-700 mb-4">맹수석의 내면 형성도</h3>
+                    <!-- Chart Container -->
+                    <div class="chart-container">
+                        <canvas id="characterChart"></canvas>
+                    </div>
+                    <p class="text-center text-xs text-stone-400 mt-4">유년 시절 형성된 핵심 가치</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Future Vision Connection -->
+        <section class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 md:p-12 border border-blue-100 shadow-inner fade-in">
+            <div class="text-center mb-10">
+                <span class="text-blue-600 font-bold tracking-wider text-sm uppercase">Connection</span>
+                <h2 class="text-3xl font-bold text-stone-800 mt-2 serif-font">과거의 배움이 미래의 약속으로</h2>
+                <p class="text-stone-600 mt-3">홍성 소년의 경험은 이제 대전 교육의 비전이 됩니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Vision 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-blue-100 flex flex-col items-center text-center">
+                    <div class="p-3 bg-blue-100 text-blue-600 rounded-full mb-4">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">지독한 성실함</h4>
+                    <p class="text-sm text-stone-500 mb-4">어머니의 가르침</p>
+                    <div class="w-px h-4 bg-stone-300 mb-4"></div>
+                    <p class="font-semibold text-stone-700">"정직하게 땀 흘린 만큼 보상받는 교육 토양 조성"</p>
+                </div>
+
+                <!-- Vision 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-blue-100 flex flex-col items-center text-center">
+                    <div class="p-3 bg-indigo-100 text-indigo-600 rounded-full mb-4">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">기개와 헌신</h4>
+                    <p class="text-sm text-stone-500 mb-4">고향의 의인들</p>
+                    <div class="w-px h-4 bg-stone-300 mb-4"></div>
+                    <p class="font-semibold text-stone-700">"각자의 재능을 꽃피우는 교육 공동체"</p>
+                </div>
+
+                <!-- Vision 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-blue-100 flex flex-col items-center text-center">
+                    <div class="p-3 bg-purple-100 text-purple-600 rounded-full mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">이웃의 보살핌</h4>
+                    <p class="text-sm text-stone-500 mb-4">마을 공동체</p>
+                    <div class="w-px h-4 bg-stone-300 mb-4"></div>
+                    <p class="font-semibold text-stone-700">"한 명의 아이도 소외되지 않는 따뜻한 책임 교육"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action / Footer Area -->
+        <div class="text-center py-10 border-t border-stone-200 mt-10">
+            <p class="text-stone-500 italic mb-4">"시골 소년 맹수석의 꿈은 이제 대전의 아이들을 향합니다."</p>
+            <div class="flex justify-center space-x-2 text-sm text-stone-400">
+                <span>#대전교육</span>
+                <span>#맹수석</span>
+                <span>#홍성소년</span>
+                <span>#성실의힘</span>
+            </div>
+            <div class="mt-8">
+                <button class="text-stone-400 hover:text-stone-600 text-sm transition" onclick="alert('다음 에피소드는 [아픈 기억, 하지만 멈출 수 없었던 정의를 향한 발걸음] 입니다.')">
+                    다음 이야기 미리보기 <i class="fas fa-arrow-right ml-1"></i>
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // --- Interactions ---
+
+        // 1. Scroll Smoothly
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 2. Toggle Meaning Visibility
+        function toggleMeaning() {
+            const meaningBox = document.getElementById('quote-meaning');
+            meaningBox.classList.toggle('hidden');
+            if (!meaningBox.classList.contains('hidden')) {
+                meaningBox.classList.add('fade-in');
+            }
+        }
+
+        // 3. Chart.js Implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('characterChart').getContext('2d');
+            
+            // Data derived from the "Source Report" content analysis
+            const data = {
+                labels: ['성실 (Sincerity)', '기개 (Mettle)', '사색 (Thinking)', '감수성 (Sensibility)', '공동체 (Community)'],
+                datasets: [{
+                    label: '유년기 형성 가치',
+                    data: [95, 85, 80, 75, 90],
+                    backgroundColor: 'rgba(120, 113, 108, 0.2)', // Stone-500 transparent
+                    borderColor: 'rgba(120, 113, 108, 1)',     // Stone-500
+                    pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+                    pointBorderColor: '#d97706', // Amber-600
+                    pointHoverBackgroundColor: '#d97706',
+                    pointHoverBorderColor: '#fff',
+                    borderWidth: 2,
+                    pointRadius: 4
+                }]
+            };
+
+            const config = {
+                type: 'radar',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false, // Vital for Tailwind container control
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true,
+                                color: '#e5e7eb'
+                            },
+                            grid: {
+                                color: '#e5e7eb'
+                            },
+                            pointLabels: {
+                                font: {
+                                    family: "'Noto Sans KR', sans-serif",
+                                    size: 12,
+                                    weight: 'bold'
+                                },
+                                color: '#4b5563'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: {
+                                display: false // Hide numbers for cleaner look
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(41, 37, 36, 0.9)',
+                            titleFont: { family: "'Noto Sans KR', sans-serif" },
+                            bodyFont: { family: "'Noto Sans KR', sans-serif" },
+                            padding: 10,
+                            cornerRadius: 8,
+                            displayColors: false,
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
+                                },
+                                label: function(context) {
+                                    return context.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            new Chart(ctx, config);
+        });
+    </script>
+    
+    <!-- Visualization & Content Choices: 
+         1. Hero Section -> Sets the emotional tone (Rural/Spring) -> CSS Background & Typography.
+         2. Roots Section -> Groups environment & family -> Card Layout -> Easy to digest.
+         3. Quote Section -> Highlights the core message -> Interactive Reveal -> Engagement.
+         4. Radar Chart -> Visualizes abstract character traits (Mettle, Sincerity, etc.) -> Chart.js -> Analytical view of childhood.
+         5. Connection Section -> Maps past traits to future policies -> Grid Layout -> Logical flow. 
+         CONFIRMATION: NO SVG graphics used (FontAwesome used for icons). NO Mermaid JS used. -->
+</body>
+</html>
