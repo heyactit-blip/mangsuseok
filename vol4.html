@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맹수석의 미래교육 리포트 #4: 연구실의 등대</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #1a202c; /* Dark background representing the late night */
+            color: #e2e8f0;
+        }
+        
+        .serif-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .light-beam {
+            background: radial-gradient(circle, rgba(255,255,200,0.15) 0%, rgba(26,32,44,0) 70%);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2d3748; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a5568; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #718096; 
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Chosen Palette: [Midnight & Lamplight] - Dark Navy/Black (Night), Warm Yellow/Gold (Light of the Lab/Knowledge), Soft White (Text/Truth).
+         Reflects the theme of "the light that doesn't go out". -->
+
+    <!-- Application Structure Plan:
+         1. Hero: Night scene visualization. Title focusing on the "Late Night Lab".
+         2. The Evidence of Sincerity (Chart): Donut chart showing the allocation of time/effort (Research vs Student Guidance).
+         3. Testimonials: Card layout featuring student quotes ("Red Pen", "Lighthouse").
+         4. Field Activity: Map or Flowchart concept showing the transition from "Theory" (Lab) to "Practice" (Field/Gwangjang).
+         5. Promise: Connection to Future Education Policy (Sincerity -> Administrative Diligence). -->
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-md border-b border-gray-800 py-4 shadow-lg">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <div class="font-bold text-gray-100 text-lg"><i class="fas fa-lightbulb mr-2 text-yellow-400"></i>미래교육 리포트</div>
+            <div class="text-sm text-gray-400 font-medium">Vol. 4: 제자들의 증언</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-24 pb-32 overflow-hidden">
+        <div class="absolute inset-0 light-beam pointer-events-none"></div>
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-in">
+            <span class="inline-block py-1 px-3 rounded-full bg-yellow-900/50 border border-yellow-700 text-yellow-200 text-xs font-bold mb-6 tracking-widest">제4화: 성실의 증거</span>
+            <h1 class="text-3xl md:text-5xl font-bold mb-8 leading-tight serif-font text-white glow-text">
+                "충남대 법대 연구실의 불은<br>가장 늦게 꺼졌습니다"
+            </h1>
+            <p class="text-xl text-gray-300 mb-4 font-light">제자들이 기억하는 <span class="text-yellow-400 font-bold">지독한 성실함</span>의 기록</p>
+            <div class="mt-12 flex justify-center">
+                <div class="animate-bounce p-2 rounded-full border border-gray-600 text-gray-400">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 -mt-10 relative z-20 pb-20 space-y-24">
+
+        <!-- 1. The Light in the Lab -->
+        <section class="bg-gray-800 rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-700 fade-in">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-white mb-4 serif-font"><i class="fas fa-building text-yellow-500 mr-2"></i>연구실의 등대</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        "교수님 연구실은 늘 등대 같았습니다. 밤늦게 학교를 나설 때도, 주말에 잠시 들러도 항상 그 자리에 계셨으니까요."
+                    </p>
+                    <div class="bg-gray-900/50 p-4 rounded-lg border-l-4 border-yellow-500">
+                        <p class="text-sm text-gray-400">
+                            <strong>140여 편의 논문</strong>은 단순한 숫자가 아닙니다.<br>
+                            금융소비자와 사회적 약자를 위해 밤을 지새운 <strong>'치열한 고민'</strong>의 시간들입니다.
+                        </p>
+                    </div>
+                </div>
+                <!-- Chart Area -->
+                <div class="md:w-1/2 w-full">
+                    <div class="bg-gray-900 p-4 rounded-xl shadow-inner">
+                        <h4 class="text-center text-gray-400 text-sm mb-4">맹수석의 시간 (Mental Model)</h4>
+                        <div class="chart-container">
+                            <canvas id="timeAllocationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Red Pen (Mentorship) -->
+        <section class="fade-in">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-white serif-font">🤝 빨간 펜의 기억</h2>
+                <p class="text-gray-400 mt-2">제자의 성장을 위해 함께 밤을 지새우다</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Testimonial Card 1 -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-red-400 transition duration-300 group">
+                    <div class="text-red-400 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"><i class="fas fa-pen-fancy"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">꼼꼼한 첨삭</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        "제 논문 위에 빽빽하게 적힌 빨간 펜 자국을 잊을 수 없습니다. 제 글을 저보다 더 소중히 여기며 문장 하나하나를 다듬어 주셨습니다."
+                    </p>
+                </div>
+
+                <!-- Testimonial Card 2 -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-blue-400 transition duration-300 group">
+                    <div class="text-blue-400 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"><i class="fas fa-user-graduate"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">끝까지 책임지는 스승</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        "제자가 한 사람의 당당한 학자로 바로 설 때까지 절대 손을 놓지 않으셨습니다. 등불이 되어주신 교수님 덕분에 길을 잃지 않았습니다."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. From Theory to Field (Interactive Flow) -->
+        <section class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 md:p-12 border border-gray-700 fade-in">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-white serif-font">🏃‍♂️ 연구실에서 광장으로</h2>
+                <p class="text-gray-400 mt-2">지식은 실천될 때 비로소 완성됩니다</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
+                <!-- Step 1 -->
+                <div class="bg-gray-700 p-6 rounded-2xl text-center w-full md:w-1/3 hover:bg-gray-600 transition cursor-default">
+                    <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl text-white">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-lg">연구실 (Theory)</h4>
+                    <p class="text-sm text-gray-300 mt-2">정의의 가치 정립<br>법리적 대안 연구</p>
+                </div>
+
+                <!-- Arrow -->
+                <div class="text-gray-500 text-2xl animate-pulse">
+                    <i class="fas fa-arrow-right hidden md:block"></i>
+                    <i class="fas fa-arrow-down block md:hidden"></i>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-gray-700 p-6 rounded-2xl text-center w-full md:w-1/3 hover:bg-gray-600 transition cursor-default">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl text-white">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-lg">광장 (Action)</h4>
+                    <p class="text-sm text-gray-300 mt-2">민주주의 실천<br>시민과 함께 호흡</p>
+                </div>
+
+                <!-- Arrow -->
+                <div class="text-gray-500 text-2xl animate-pulse">
+                    <i class="fas fa-arrow-right hidden md:block"></i>
+                    <i class="fas fa-arrow-down block md:hidden"></i>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-gray-700 p-6 rounded-2xl text-center w-full md:w-1/3 hover:bg-gray-600 transition cursor-default">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl text-white">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-lg">현장 (Solution)</h4>
+                    <p class="text-sm text-gray-300 mt-2">대한상사중재원장<br>실질적 갈등 해결</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. The Promise -->
+        <section class="text-center py-10 fade-in">
+            <div class="max-w-2xl mx-auto">
+                <i class="fas fa-quote-left text-4xl text-gray-600 mb-6"></i>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 leading-relaxed serif-font">
+                    "대전 교육의 미래,<br><span class="text-yellow-400">지독한 성실함</span>으로 책임지겠습니다"
+                </h2>
+                <p class="text-lg text-gray-300 mb-8">
+                    화려한 수사보다 묵묵한 실천으로.<br>
+                    가장 늦게까지 고민하고, 가장 일찍 현장으로 달려가는<br>
+                    <strong>'행정의 연구자'</strong>가 되겠습니다.
+                </p>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto rounded-full"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-gray-800 pt-8 pb-12 text-center">
+            <div class="flex flex-wrap justify-center gap-3 mb-6">
+                <span class="bg-gray-800 text-gray-400 px-3 py-1 rounded-full text-xs border border-gray-700">#대전교육</span>
+                <span class="bg-gray-800 text-gray-400 px-3 py-1 rounded-full text-xs border border-gray-700">#맹수석</span>
+                <span class="bg-gray-800 text-gray-400 px-3 py-1 rounded-full text-xs border border-gray-700">#학자적성실함</span>
+                <span class="bg-gray-800 text-gray-400 px-3 py-1 rounded-full text-xs border border-gray-700">#교육철학</span>
+            </div>
+            <button onclick="alert('다음 에피소드 [정책 리포트 #5: AI 시대, 따뜻한 교육 안전망]으로 이어집니다.')" class="text-gray-500 hover:text-white transition flex items-center justify-center mx-auto text-sm">
+                다음 시리즈: 정책 리포트 보기 <i class="fas fa-chevron-right ml-2"></i>
+            </button>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- Interactions ---
+
+        // 1. Chart.js Implementation - Visualizing "Sincerity" (Time Allocation)
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('timeAllocationChart').getContext('2d');
+            
+            const data = {
+                labels: ['연구 (Research)', '제자 지도 (Mentorship)', '강의 (Teaching)', '사회 봉사 (Service)'],
+                datasets: [{
+                    data: [40, 30, 20, 10], // Conceptual distribution emphasizing Research & Mentorship
+                    backgroundColor: [
+                        'rgba(234, 179, 8, 0.8)',  // Yellow-500 (Light)
+                        'rgba(239, 68, 68, 0.8)',  // Red-500 (Passion/Pen)
+                        'rgba(59, 130, 246, 0.8)', // Blue-500
+                        'rgba(16, 185, 129, 0.8)'  // Emerald-500
+                    ],
+                    borderColor: '#1a202c', // Match background color for spacing
+                    borderWidth: 2,
+                    hoverOffset: 4
+                }]
+            };
+
+            const config = {
+                type: 'doughnut',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#cbd5e1', // Slate-300
+                                font: { family: "'Noto Sans KR', sans-serif", size: 12 },
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                            titleColor: '#1a202c',
+                            bodyColor: '#1a202c',
+                            titleFont: { family: "'Noto Sans KR', sans-serif" },
+                            bodyFont: { family: "'Noto Sans KR', sans-serif" },
+                            callbacks: {
+                                label: function(context) {
+                                    return ' ' + context.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            new Chart(ctx, config);
+        });
+    </script>
+
+    <!-- Visualization & Content Choices:
+         1. Hero Section -> Dark Mode/Night Theme -> Visually reinforces "Late Night Lab".
+         2. Doughnut Chart -> Visualizes Effort Distribution -> Shows balance between research and student care.
+         3. Card Layout -> Testimonials -> Highlights the "Red Pen" and "Lighthouse" metaphors.
+         4. Flow Visualization -> Theory to Practice -> Demonstrates the practical application of his sincerity.
+         CONFIRMATION: NO SVG graphics used (FontAwesome used). NO Mermaid JS used. -->
+</body>
+</html>
