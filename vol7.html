@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맹수석의 미래교육 리포트 #7: 대전판 합의</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f3f4f6; /* Neutral background */
+            color: #1f2937;
+        }
+        
+        .serif-font {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .scale-balance {
+            background: linear-gradient(180deg, #e5e7eb 49%, #9ca3af 50%, #e5e7eb 51%);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f3f4f6; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #9ca3af; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; 
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Chosen Palette: [Harmonious Balance] - Trust Blue (Democracy/Dialogue), Growth Green (Education/Future), Neutral Gray (Balance/Impartiality).
+         Reflects the theme of "Agreement" and "Neutrality". -->
+
+    <!-- Application Structure Plan:
+         1. Hero: Dignified, balanced visual. Title emphasizing "Beutelsbach Consensus & Daejeon Agreement".
+         2. The Concept (Interactive): 3 Core Principles of Beutelsbach (No Indoctrination, Controversy, Student Interest) explained via cards.
+         3. The Proposal (Daejeon Model): "Daejeon-style Agreement" visualized as a building or structure.
+         4. The Benefit (Chart): Comparison of "Conflict" vs. "Consensus" outcomes (Conceptual chart).
+         5. Call to Action: Vision for a democratic classroom. -->
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 py-4 shadow-sm">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <div class="font-bold text-gray-800 text-lg"><i class="fas fa-handshake mr-2 text-blue-600"></i>미래교육 리포트</div>
+            <div class="text-sm text-gray-500 font-medium">Vol. 7: 대전판 합의</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-gradient-to-r from-blue-800 to-indigo-900 text-white pt-24 pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] opacity-10"></div>
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-in">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-700/50 border border-blue-400 text-blue-100 text-xs font-bold mb-6 tracking-widest">제7화: 민주시민교육</span>
+            <h1 class="text-3xl md:text-5xl font-bold mb-8 leading-tight serif-font">
+                독일에는 '보이텔스바흐',<br>
+                대전에는 <span class="text-green-400 border-b-4 border-green-500">'대전판 합의'</span>가 필요합니다
+            </h1>
+            <p class="text-xl text-blue-200 mb-4 font-light">"정치적 중립과 토론 교육의 공존,<br>갈등을 넘어 상생으로 가는 길을 엽니다."</p>
+            <div class="mt-12 flex justify-center">
+                <div class="animate-bounce p-2 rounded-full border border-blue-500 text-blue-300">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 -mt-10 relative z-20 pb-20 space-y-24">
+
+        <!-- 1. The Inspiration: Beutelsbach Consensus -->
+        <section class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-200 fade-in">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-800 mb-3 serif-font"><i class="fas fa-balance-scale text-blue-600 mr-2"></i>보이텔스바흐 합의의 3원칙</h2>
+                <p class="text-gray-600">1976년 독일, 보수와 진보가 합의한 민주시민교육의 대원칙</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Principle 1 -->
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 hover:shadow-md transition text-center group">
+                    <div class="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-700 text-2xl group-hover:scale-110 transition">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">주입 금지</h3>
+                    <p class="text-gray-600 text-sm">교사는 학생에게 자신의 견해를 강요해서는 안 된다.</p>
+                </div>
+
+                <!-- Principle 2 -->
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 hover:shadow-md transition text-center group">
+                    <div class="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-700 text-2xl group-hover:scale-110 transition">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">논쟁성 유지</h3>
+                    <p class="text-gray-600 text-sm">사회적으로 논쟁적인 사안은 교실에서도 논쟁적으로 다뤄져야 한다.</p>
+                </div>
+
+                <!-- Principle 3 -->
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 hover:shadow-md transition text-center group">
+                    <div class="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-700 text-2xl group-hover:scale-110 transition">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">학습자 중심</h3>
+                    <p class="text-gray-600 text-sm">학생이 스스로 판단하고 자신의 이해관계를 관철할 능력을 키워야 한다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Proposal: Daejeon Model -->
+        <section class="fade-in">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-800 serif-font">🤝 맹수석의 제안: 대전형 합의</h2>
+                <p class="text-gray-500 mt-2">갈등과 대립을 넘어, 교실에서부터 배우는 민주주의</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col md:flex-row">
+                <div class="md:w-1/3 bg-gray-100 p-8 flex flex-col justify-center items-center text-center border-b md:border-b-0 md:border-r border-gray-200">
+                    <i class="fas fa-city text-6xl text-gray-400 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-700">Daejeon Model</h3>
+                    <p class="text-sm text-gray-500 mt-2">지역 특성에 맞는<br>민주시민교육 거버넌스</p>
+                </div>
+                <div class="md:w-2/3 p-8 space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold mr-4">1</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-1">교사의 중립성과 전문성 보장</h4>
+                            <p class="text-gray-600 text-sm">정치적 강요 없는 균형 잡힌 시각을 위한 가이드라인 마련.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold mr-4">2</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-1">논쟁이 살아있는 교실</h4>
+                            <p class="text-gray-600 text-sm">찬반 토론과 합의 도출 과정을 정규 교육과정에 통합.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold mr-4">3</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-1">헌법 정신 기반 인권 교육</h4>
+                            <p class="text-gray-600 text-sm">인간 존엄과 상호 존중을 바탕으로 한 공동체 교육 강화.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Impact Visualization (Chart) -->
+        <section class="bg-gray-800 rounded-3xl p-8 md:p-12 text-white fade-in">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4 serif-font"><i class="fas fa-chart-pie text-green-400 mr-2"></i>갈등을 성장의 동력으로</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        "대화의 문을 닫는 순간 갈등은 파괴가 되지만,<br>대화를 이어가는 순간 갈등은 성장의 동력이 됩니다."
+                    </p>
+                    <div class="bg-gray-700 p-4 rounded-lg border-l-4 border-green-500">
+                        <p class="text-sm text-gray-200">
+                            <strong>민주주의 예방주사:</strong><br>
+                            어릴 때부터 합리적 토론을 배운 아이들은<br>
+                            미래 사회의 갈등을 지혜롭게 해결합니다.
+                        </p>
+                    </div>
+                </div>
+                <!-- Chart Area -->
+                <div class="md:w-1/2 w-full">
+                    <div class="bg-gray-900 p-4 rounded-2xl shadow-inner">
+                        <h4 class="text-center text-gray-400 text-sm mb-4">교육 효과 비교 (Simulation)</h4>
+                        <div class="chart-container">
+                            <canvas id="consensusChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Vision Statement -->
+        <section class="text-center py-10 fade-in">
+            <div class="max-w-2xl mx-auto">
+                <i class="fas fa-quote-left text-4xl text-gray-300 mb-6"></i>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 leading-relaxed serif-font">
+                    "대전 교육,<br><span class="text-blue-600">상생</span>과 <span class="text-green-600">협력</span>의 요람이 되겠습니다"
+                </h2>
+                <p class="text-lg text-gray-600 mb-8">
+                    편견 없이 세상을 바라보고, 당당한 시민으로서 목소리를 내는 아이들.<br>
+                    갈등 해결의 지혜를 가르치는 <strong>품격 있는 교육</strong>을 약속합니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-gray-200 pt-8 pb-12 text-center mt-12">
+            <div class="flex flex-wrap justify-center gap-3 mb-6">
+                <span class="bg-white text-gray-600 px-3 py-1 rounded-full text-xs border border-gray-300">#대전교육</span>
+                <span class="bg-white text-gray-600 px-3 py-1 rounded-full text-xs border border-gray-300">#보이텔스바흐</span>
+                <span class="bg-white text-gray-600 px-3 py-1 rounded-full text-xs border border-gray-300">#민주시민교육</span>
+                <span class="bg-white text-gray-600 px-3 py-1 rounded-full text-xs border border-gray-300">#토론문화</span>
+            </div>
+            <button onclick="alert('다음 에피소드 [정책 리포트 #8: 온동네 초등돌봄 혁신]으로 이어집니다.')" class="text-gray-500 hover:text-blue-600 transition flex items-center justify-center mx-auto text-sm font-medium">
+                다음 이야기: 온동네 돌봄 <i class="fas fa-chevron-right ml-2"></i>
+            </button>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- Interactions ---
+
+        // 1. Chart.js Implementation - Comparing Educational Outcomes
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('consensusChart').getContext('2d');
+            
+            const data = {
+                labels: ['갈등 해결 능력 (Conflict Res.)', '비판적 사고 (Critical Thinking)', '상호 존중 (Respect)', '사회 참여 (Participation)'],
+                datasets: [
+                    {
+                        label: '기존 주입식 교육 (Traditional)',
+                        data: [40, 50, 45, 30],
+                        backgroundColor: 'rgba(107, 114, 128, 0.5)', // Gray
+                        borderColor: 'rgba(107, 114, 128, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '대전판 합의 교육 (Consensus Model)',
+                        data: [85, 90, 95, 80], // Higher expected outcomes
+                        backgroundColor: 'rgba(59, 130, 246, 0.6)', // Blue
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            };
+
+            const config = {
+                type: 'bar',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { color: '#374151' }, // Dark grid lines for dark bg
+                            ticks: { color: '#9ca3af' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#9ca3af' }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: { color: '#e5e7eb' }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                            titleColor: '#1f2937',
+                            bodyColor: '#1f2937',
+                            titleFont: { family: "'Noto Sans KR', sans-serif" },
+                            bodyFont: { family: "'Noto Sans KR', sans-serif" }
+                        }
+                    }
+                }
+            };
+
+            new Chart(ctx, config);
+        });
+    </script>
+
+    <!-- Visualization & Content Choices:
+         1. Hero Section -> Balanced/Diplomatic visuals -> Scales background, Blue/Green theme.
+         2. Principles Grid -> Icon Cards -> Clearly breaks down the 3 pillars of Beutelsbach.
+         3. Proposal Section -> Structure Visual -> Shows the "Daejeon Model" as a solid plan.
+         4. Chart Section -> Bar Chart -> Compares outcomes to justify the policy change.
+         CONFIRMATION: NO SVG graphics used (FontAwesome used). NO Mermaid JS used. -->
+</body>
+</html>
