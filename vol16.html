@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>맹수석의 미래교육 리포트 #15: 안전 설계자</title>
+    <title>맹수석의 미래교육 리포트 #16: 따뜻한 권위</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -12,8 +12,8 @@
         
         body {
             font-family: 'Noto Sans KR', sans-serif;
-            background-color: #f8fafc; /* Safe, neutral slate background */
-            color: #1e293b; /* Dark slate text */
+            background-color: #fff7ed; /* Warm orange-white background */
+            color: #431407; /* Deep brown text */
         }
         
         .serif-font {
@@ -38,14 +38,8 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .safety-stripe {
-            background: repeating-linear-gradient(
-                45deg,
-                #fbbf24,
-                #fbbf24 10px,
-                #1e293b 10px,
-                #1e293b 20px
-            );
+        .tea-gradient {
+            background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
         }
         
         /* Custom scrollbar */
@@ -53,50 +47,50 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #e2e8f0; 
+            background: #ffedd5; 
         }
         ::-webkit-scrollbar-thumb {
-            background: #cbd5e1; 
+            background: #a8a29e; 
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8; 
+            background: #78716c; 
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Chosen Palette: [Safety First] - Warning Yellow/Amber (Alert/Caution), Navy Blue (Authority/Trust), Slate Gray (Infrastructure).
-         Reflects the theme of "Crisis Management" and "Safety Design". -->
+    <!-- Chosen Palette: [Warmth of Tea] - Deep Brown (Earth/Stability), Warm Orange (Comfort/Hope), Cream (Softness).
+         Reflects the "Cup of Tea" anecdote and humanistic leadership. -->
 
     <!-- Application Structure Plan:
-         1. Hero: Bold, authoritative visual. Title: "Safety Architect of Daejeon Education".
-         2. The Situation (News Ticker/Card): Summarizing the "Lee-Park School Incident" and the need for decisive action.
-         3. The Strategy (Flowchart/Grid): "Principle-Based Response", "Responsible Administration", "Preemptive Design".
-         4. The Safety Net (Interactive Map/List): "365 Safe Routes", "Facility Diagnosis", "Digital Safety".
-         5. Response System (Chart): Visualizing the "Golden Time" response speed comparison.
-         6. Promise: A strong commitment to student safety. -->
+         1. Hero: Emotional, storytelling visual. Title: "The Power of Belief".
+         2. The Struggle (Chart): Line chart visualizing the student's crisis (Stress vs Confidence).
+         3. The Turning Point (Interaction): A "Tea Cup" reveal interaction showing the Professor's words.
+         4. Leadership Analysis (Radar Chart): Comparing "Authoritative" vs "Warm Authority" (Maeng's Style).
+         5. The Ripple Effect (Flow): From Student to Leader.
+         6. Vision Promise: "Being the Fence" for Daejeon students. -->
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-[#f8fafc]/95 backdrop-blur-md border-b border-slate-200 py-4 shadow-sm">
+    <nav class="sticky top-0 z-50 bg-[#fff7ed]/95 backdrop-blur-md border-b border-orange-200 py-4 shadow-sm">
         <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
-            <div class="font-bold text-slate-800 text-lg"><i class="fas fa-hard-hat mr-2 text-amber-500"></i>미래교육 리포트</div>
-            <div class="text-sm text-slate-600 font-medium">Vol. 15: 안전 설계자</div>
+            <div class="font-bold text-orange-900 text-lg"><i class="fas fa-mug-hot mr-2 text-orange-600"></i>미래교육 리포트</div>
+            <div class="text-sm text-orange-700 font-medium">Vol. 16: 제자의 증언</div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative bg-slate-900 text-white pt-24 pb-32 overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-2 safety-stripe"></div>
+    <header class="relative tea-gradient text-white pt-24 pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] opacity-20"></div>
         <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-in">
-            <span class="inline-block py-1 px-3 rounded-full bg-amber-500/20 border border-amber-500 text-amber-400 text-xs font-bold mb-6 tracking-widest">
-                <i class="fas fa-shield-alt mr-1"></i>위기 관리 리더십
+            <span class="inline-block py-1 px-3 rounded-full bg-orange-900/50 border border-orange-400 text-orange-100 text-xs font-bold mb-6 tracking-widest">
+                <i class="fas fa-heart mr-1"></i>휴머니즘 교육
             </span>
-            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight serif-font">
-                "위기에 강한 리더십,<br>
-                대전 교육의 <span class="text-amber-400 border-b-4 border-amber-600">'안전 설계자'</span>가 되다"
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight serif-font text-orange-50">
+                "아이 셋 엄마의 박사 도전,<br>
+                교수님의 <span class="text-yellow-300 border-b-4 border-yellow-500">믿음</span>이 없었다면..."
             </h1>
-            <p class="text-xl text-slate-300 mb-8 font-light">"사고가 터진 뒤의 수습보다 중요한 것은<br>사고를 원천 차단하는 <strong>시스템</strong>입니다."</p>
+            <p class="text-xl text-orange-200 mb-8 font-light">"교수님, 저 도저히 못 하겠어요..."<br>무너지는 제자를 일으켜 세운 따뜻한 차 한 잔의 기억.</p>
             
             <div class="flex justify-center gap-4">
                 <div class="animate-bounce bg-white/10 p-3 rounded-full border border-white/20 text-white">
@@ -108,211 +102,244 @@
 
     <main class="max-w-4xl mx-auto px-6 -mt-10 relative z-20 pb-20 space-y-24">
 
-        <!-- 1. The Crisis: Lee-Park School Incident -->
-        <section class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-slate-200 fade-in relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-4 opacity-5 text-9xl text-red-900"><i class="fas fa-exclamation-triangle"></i></div>
-            
-            <div class="relative z-10">
-                <h2 class="text-2xl font-bold text-slate-800 mb-4 serif-font">🛡️ 위기 앞의 단호한 결단</h2>
-                <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg mb-8">
-                    <h3 class="font-bold text-red-800 mb-2">'리박스쿨 사태' 등 교육 위기</h3>
-                    <p class="text-red-700 text-sm">
-                        교육 현장에서 이념 갈등과 안전 위협이 발생했을 때,<br>
-                        방관하지 않고 <strong>원칙</strong>과 <strong>책임</strong>으로 맞섰습니다.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                        <h4 class="font-bold text-slate-700 mb-2"><i class="fas fa-gavel mr-2 text-blue-600"></i>원칙 중심 대응</h4>
-                        <p class="text-slate-600 text-sm">정치적 계산 배제. 오직 아이들의 교육권과 안전을 최우선으로 진상 조사 및 대책 마련.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                        <h4 class="font-bold text-slate-700 mb-2"><i class="fas fa-user-shield mr-2 text-green-600"></i>책임지는 행정</h4>
-                        <p class="text-slate-600 text-sm">책임 전가 없이, 결정권자가 직접 현장을 누비며 갈등 중재 및 해결책 제시.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. The Blueprint: Preemptive Safety Design -->
-        <section class="fade-in">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-slate-900 serif-font">🏗️ 맹수석의 안전 설계도</h2>
-                <p class="text-slate-600 mt-2">사후 약방문이 아닌, 사전 예방 시스템을 구축합니다.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Project 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-amber-500 hover:shadow-lg transition group">
-                    <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 mb-4 group-hover:bg-amber-600 group-hover:text-white transition">
-                        <i class="fas fa-traffic-light"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">365 안전 통학로</h3>
-                    <p class="text-slate-600 text-sm">
-                        대전 시내 모든 학교 통학로 전수 조사.<br>
-                        법적 기준을 넘어서는 <strong>실질적 안전 가이드라인</strong> 적용.
-                    </p>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-500 hover:shadow-lg transition group">
-                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4 group-hover:bg-blue-600 group-hover:text-white transition">
-                        <i class="fas fa-search-location"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">시설 안전 정밀 진단</h3>
-                    <p class="text-slate-600 text-sm">
-                        노후 교실 및 체육 시설 상시 점검.<br>
-                        전문가가 참여하는 <strong>안심 환경 구축</strong>.
-                    </p>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-purple-500 hover:shadow-lg transition group">
-                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mb-4 group-hover:bg-purple-600 group-hover:text-white transition">
-                        <i class="fas fa-fingerprint"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">디지털 범죄 예방</h3>
-                    <p class="text-slate-600 text-sm">
-                        딥페이크 등 지능형 범죄 대응.<br>
-                        교육청 내 <strong>전담 대응팀 강화</strong> 및 강력한 법률 지원.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Response System: Golden Time (Chart) -->
-        <section class="bg-slate-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl fade-in">
+        <!-- 1. The Crisis: Visualizing the Struggle -->
+        <section class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-orange-100 fade-in">
             <div class="flex flex-col md:flex-row items-center gap-10">
                 <div class="md:w-1/2">
-                    <h3 class="text-2xl font-bold mb-4 serif-font text-amber-400"><i class="fas fa-stopwatch mr-2"></i>골든타임 사수</h3>
-                    <p class="text-slate-300 leading-relaxed mb-6">
-                        위기 상황에서 가장 중요한 것은 <strong>속도</strong>입니다.<br>
-                        행정 절차 때문에 안전이 뒷전으로 밀리는 일은 결코 없을 것입니다.
+                    <h3 class="text-2xl font-bold text-orange-900 mb-4 serif-font"><i class="fas fa-baby-carriage text-orange-500 mr-2"></i>워킹맘의 절망</h3>
+                    <p class="text-stone-600 leading-relaxed mb-6">
+                        아이 셋 육아, 직장 생활, 박사 과정...<br>
+                        체력은 바닥나고 논문은 한 줄도 써지지 않던 그날.<br>
+                        제자는 연구실 문을 두드리고 울음을 터뜨렸습니다.
                     </p>
-                    <div class="bg-slate-700 p-4 rounded-lg border-l-4 border-red-500">
-                        <p class="text-sm text-slate-200">
-                            <strong>24시간 위기 통합 관제 센터:</strong><br>
-                            사고 접수 즉시 전문 인력이 투입되는 원스톱 시스템.
+                    <div class="bg-stone-50 p-4 rounded-lg border-l-4 border-stone-400">
+                        <p class="text-sm text-stone-600 italic">
+                            "이제 그만둘까 봐요. 아이들에게도 미안하고..."
                         </p>
                     </div>
                 </div>
                 <!-- Chart Area -->
                 <div class="md:w-1/2 w-full">
-                    <div class="bg-slate-900 p-4 rounded-2xl shadow-inner">
-                        <h4 class="text-center text-slate-400 text-sm mb-4">위기 대응 소요 시간 (Simulation)</h4>
+                    <div class="bg-orange-50 p-4 rounded-2xl shadow-inner">
+                        <h4 class="text-center text-orange-800 text-sm mb-4">제자의 심리 변화 (Mental State)</h4>
                         <div class="chart-container">
-                            <canvas id="responseChart"></canvas>
+                            <canvas id="crisisChart"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Vision & Promise -->
-        <section class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm fade-in text-center mt-12">
-            <i class="fas fa-quote-left text-4xl text-slate-300 mb-4"></i>
-            <h3 class="text-2xl font-bold text-slate-900 mb-6 serif-font">당신의 아이를 위해 맹수석이 깨어 있겠습니다</h3>
-            <p class="text-slate-600 leading-relaxed max-w-2xl mx-auto mb-8">
-                로스쿨 원장 시절 학생 안전을 책임졌던 마음으로,<br>
-                중재원장 시절 국가 갈등을 관리했던 역량으로,<br>
-                <strong>'대전 교육의 든든한 울타리'</strong>가 되겠습니다.
-            </p>
-            
-            <div class="flex flex-wrap justify-center gap-2 mb-4">
-                <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs border border-slate-200">#대전교육</span>
-                <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs border border-slate-200">#맹수석</span>
-                <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs border border-slate-200">#위기관리</span>
-                <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs border border-slate-200">#학교안전</span>
+        <!-- 2. The Turning Point: Interactive Tea Time -->
+        <section class="fade-in text-center">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold text-orange-900 serif-font">🍵 따뜻한 차 한 잔의 위로</h2>
+                <p class="text-orange-700 mt-2">맹수석 교수는 다그치지 않았습니다. 그저 기다려주었습니다.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto bg-stone-800 text-white rounded-2xl p-10 shadow-2xl relative overflow-hidden group hover:scale-105 transition duration-500 cursor-pointer" onclick="document.getElementById('quote-reveal').classList.remove('hidden'); this.classList.remove('hover:scale-105');">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-500 to-yellow-500"></div>
+                <div class="mb-6 text-6xl text-orange-300 opacity-80"><i class="fas fa-quote-left"></i></div>
+                
+                <div id="quote-preview">
+                    <p class="text-xl text-stone-300 animate-pulse">카드를 터치하여 스승의 말을 확인하세요</p>
+                </div>
+
+                <div id="quote-reveal" class="hidden transition-opacity duration-1000">
+                    <p class="text-lg md:text-xl font-medium leading-relaxed text-orange-50 serif-font">
+                        "공부는 머리로만 하는 게 아니란다.<br>
+                        삶의 고비를 넘는 법을 배우는 것도 공부야.<br>
+                        네가 아이들을 사랑하는 그 마음이<br>
+                        나중에 좋은 학자가 되는 밑거름이 될 거다."
+                    </p>
+                    <p class="mt-6 text-orange-400 font-bold text-sm uppercase tracking-widest">- 스승 맹수석 -</p>
+                </div>
             </div>
         </section>
 
-        <!-- Footer Navigation -->
-        <div class="text-center py-10 mt-8">
-            <button onclick="alert('다음 에피소드 [증언 리포트 #16: 제자가 기억하는 스승 맹수석]으로 이어집니다.')" class="bg-slate-700 hover:bg-slate-800 text-white px-8 py-3 rounded-full shadow-lg transition flex items-center justify-center mx-auto font-medium">
-                다음 이야기: 증언 리포트 <i class="fas fa-chevron-right ml-2"></i>
+        <!-- 3. Leadership Analysis (Chart) -->
+        <section class="bg-white rounded-3xl p-8 md:p-12 border border-stone-200 shadow-sm fade-in">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <!-- Chart Area -->
+                <div class="md:w-1/2 w-full order-2 md:order-1">
+                    <div class="chart-container">
+                        <canvas id="leadershipChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 order-1 md:order-2 text-right md:text-left">
+                    <h3 class="text-2xl font-bold text-stone-800 mb-4 serif-font">따뜻한 권위 (Warm Authority)</h3>
+                    <p class="text-stone-600 leading-relaxed mb-6">
+                        학문적 기준은 엄격했지만, 사람에 대한 사랑은 한없이 깊었습니다.<br>
+                        제자들은 그를 <strong>'아버지 같은 스승'</strong>이라 기억합니다.
+                    </p>
+                    <ul class="space-y-3 text-sm text-stone-600 inline-block text-left">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> <strong>기다림:</strong> 재촉하지 않고 스스로 일어서길 기다림</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> <strong>신뢰:</strong> 가능성을 믿고 끝까지 지지함</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> <strong>엄정함:</strong> 학문적 타협은 없으나 인격적 존중 유지</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Vision: The Fence -->
+        <section class="text-center py-12 border-t border-orange-200 mt-8 fade-in bg-orange-50 rounded-b-3xl">
+            <div class="mb-6">
+                <i class="fas fa-users text-6xl text-orange-600"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-orange-900 mb-6 serif-font">
+                "대전의 모든 아이에게<br><span class="text-orange-600">'든든한 백'</span>이 되겠습니다"
+            </h2>
+            <p class="text-lg text-orange-800 mb-8 max-w-2xl mx-auto">
+                한 명의 제자를 포기하지 않았던 그 마음으로,<br>
+                대전 교육 현장에서 힘들어하는 아이들의 손을 놓지 않겠습니다.<br>
+                <strong>'희망의 사다리'</strong>이자 <strong>'따뜻한 울타리'</strong>가 되겠습니다.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <span class="bg-white text-orange-800 px-3 py-1 rounded-full text-xs border border-orange-200">#대전교육</span>
+                <span class="bg-white text-orange-800 px-3 py-1 rounded-full text-xs border border-orange-200">#맹수석</span>
+                <span class="bg-white text-orange-800 px-3 py-1 rounded-full text-xs border border-orange-200">#제자사랑</span>
+                <span class="bg-white text-orange-800 px-3 py-1 rounded-full text-xs border border-orange-200">#기다림의교육</span>
+            </div>
+
+            <button onclick="alert('다음 에피소드 [증언 리포트 #17: 연구실 문을 나서면 아버지 같았던 스승]으로 이어집니다.')" class="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full shadow-lg transition flex items-center justify-center mx-auto font-medium">
+                다음 이야기: 아버지 같은 스승 <i class="fas fa-chevron-right ml-2"></i>
             </button>
-        </div>
+        </section>
 
     </main>
 
     <script>
         // --- Interactions ---
 
-        // 1. Chart.js Implementation - Response Time
+        // 1. Chart.js Implementation - Crisis & Recovery
         document.addEventListener('DOMContentLoaded', function() {
-            const ctx = document.getElementById('responseChart').getContext('2d');
+            const ctxCrisis = document.getElementById('crisisChart').getContext('2d');
             
-            const data = {
-                labels: ['사고 보고 (Report)', '상황 판단 (Assessment)', '인력 투입 (Deployment)', '현장 수습 (Resolution)'],
+            const dataCrisis = {
+                labels: ['입학 초기', '육아 병행', '슬럼프 (Crisis)', '면담 후', '졸업 및 성공'],
                 datasets: [
                     {
-                        label: '기존 시스템 (Traditional)',
-                        data: [60, 120, 180, 240], // Minutes (Slow)
-                        backgroundColor: 'rgba(100, 116, 139, 0.5)', // Slate-500
-                        borderColor: 'rgba(100, 116, 139, 1)',
-                        borderWidth: 1,
-                        fill: true
+                        label: '자신감/의지 (Confidence)',
+                        data: [90, 60, 20, 70, 95], // Dip and recovery
+                        borderColor: 'rgba(234, 88, 12, 1)', // Orange-600
+                        backgroundColor: 'rgba(234, 88, 12, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        yAxisID: 'y'
                     },
                     {
-                        label: '통합 관제 센터 (Integrated Center)',
-                        data: [10, 20, 40, 90], // Minutes (Fast - Golden Time)
-                        backgroundColor: 'rgba(245, 158, 11, 0.6)', // Amber-500
-                        borderColor: 'rgba(245, 158, 11, 1)',
+                        label: '스트레스/부담 (Stress)',
+                        data: [40, 70, 95, 50, 30], // High peak then drop
+                        borderColor: 'rgba(87, 83, 78, 0.5)', // Stone-500
+                        borderDash: [5, 5],
                         borderWidth: 2,
-                        fill: true
+                        tension: 0.4,
+                        yAxisID: 'y'
                     }
                 ]
             };
 
-            const config = {
+            const configCrisis = {
                 type: 'line',
-                data: data,
+                data: dataCrisis,
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        annotation: {
+                            annotations: {
+                                line1: {
+                                    type: 'line',
+                                    xMin: 2,
+                                    xMax: 2,
+                                    borderColor: 'red',
+                                    borderWidth: 2,
+                                    label: {
+                                        content: '위기의 순간',
+                                        enabled: true,
+                                        position: 'top'
+                                    }
+                                }
+                            }
+                        }
+                    },
                     scales: {
                         y: {
                             beginAtZero: true,
-                            title: { display: true, text: '소요 시간 (분)', color: '#94a3b8' },
-                            grid: { color: '#334155' },
-                            ticks: { color: '#cbd5e1' }
+                            max: 100,
+                            display: false // Clean look
                         },
                         x: {
-                            grid: { display: false },
-                            ticks: { color: '#cbd5e1' }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            labels: { color: '#e2e8f0' },
-                            position: 'bottom'
-                        },
-                        tooltip: {
-                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
-                            titleColor: '#e2e8f0',
-                            bodyColor: '#e2e8f0',
-                            titleFont: { family: "'Noto Sans KR', sans-serif" },
-                            bodyFont: { family: "'Noto Sans KR', sans-serif" },
-                            callbacks: {
-                                label: function(context) {
-                                    return context.dataset.label + ': ' + context.raw + '분';
-                                }
-                            }
+                            grid: { display: false }
                         }
                     }
                 }
             };
 
-            new Chart(ctx, config);
+            new Chart(ctxCrisis, configCrisis);
+
+            // 2. Chart.js Implementation - Leadership Radar
+            const ctxLeader = document.getElementById('leadershipChart').getContext('2d');
+
+            const dataLeader = {
+                labels: ['인내심 (Patience)', '신뢰 (Trust)', '엄격함 (Strictness)', '공감 (Empathy)', '지식 전달 (Teaching)'],
+                datasets: [
+                    {
+                        label: '맹수석 교수 (Mentor)',
+                        data: [95, 100, 85, 95, 90], // High empathy/trust
+                        backgroundColor: 'rgba(249, 115, 22, 0.4)', // Orange-500
+                        borderColor: 'rgba(249, 115, 22, 1)',
+                        pointBackgroundColor: '#fff',
+                        pointBorderColor: 'rgba(249, 115, 22, 1)'
+                    },
+                    {
+                        label: '일반적인 권위형 (Traditional)',
+                        data: [40, 50, 90, 30, 80], // High strictness, low empathy
+                        backgroundColor: 'rgba(120, 113, 108, 0.2)', // Stone-500
+                        borderColor: 'rgba(120, 113, 108, 0.5)',
+                        pointBackgroundColor: 'rgba(120, 113, 108, 0)',
+                        pointBorderColor: 'rgba(120, 113, 108, 0)'
+                    }
+                ]
+            };
+
+            const configLeader = {
+                type: 'radar',
+                data: dataLeader,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#e7e5e4' },
+                            grid: { color: '#e7e5e4' },
+                            pointLabels: {
+                                font: { family: "'Noto Sans KR', sans-serif", size: 12, weight: 'bold' },
+                                color: '#57534e'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            };
+
+            new Chart(ctxLeader, configLeader);
         });
     </script>
 
     <!-- Visualization & Content Choices:
-         1. Hero Section -> Serious/Alert theme -> Amber/Slate colors, Construction/Safety metaphors.
-         2. Crisis Card -> News/Alert Style -> Highlights the "Lee-Park School" incident and the principled response.
-         3. Blueprint Grid -> Icon Cards -> Details the 3 practical safety projects (Routes, Facility, Digital).
-         4. Response Chart -> Line Chart -> Demonstrates the drastic reduction in response time (Golden Time).
+         1. Hero Section -> Warm/Humanistic theme -> Tea gradient, Wood texture.
+         2. Crisis Chart -> Line Chart -> Emotionally maps the "Slump" and "Recovery" to show the impact of mentorship.
+         3. Quote Interaction -> Reveal Card -> Turns the core message into an interactive discovery moment.
+         4. Leadership Radar -> Comparison -> Defines "Warm Authority" quantitatively against traditional models.
          CONFIRMATION: NO SVG graphics used (FontAwesome used). NO Mermaid JS used. -->
 </body>
 </html>
